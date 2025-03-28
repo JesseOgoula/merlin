@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats du QCM</title>
+    <link rel="stylesheet" href="mathstyle.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script defer src="resultats.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div class="container">
+        <main class="main-content">
+            <h2>Résultats du QCM</h2>
+            <form id="results-form">
+                <div id="email-status-message" style="margin-bottom: 10px;"></div>
+                <p>Nom d'utilisateur: <span id="user-name"></span></p>
+                <p>Spécialité: <span id="specialite"></span></p>
+                <p>Score final: <span id="score"></span>%</p>
+                <h1 id="classe"></h1>
+                <p id="message"></p>
+                <p id="cheated"></p>
+                <button type="button" id="send-email-btn">Envoyer les résultats par email</button>
+            </form>
+        </main>
+    </div>
+
+    <footer id="footer">
+        <p>&copy; 2025. <a href="https://www.mostclient.site" target="_blank">Mostclient</a> Tous droits réservés.</p>
+    </footer>
+</body>
+</html> 

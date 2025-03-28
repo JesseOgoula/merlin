@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>QCM D'EVALUATION</title>
+  <!-- Lien vers Bootstrap 5 (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="d-flex flex-column vh-100 overflow-hidden">
+  <!-- Partie principale -->
+  <main class="flex-grow-1 position-relative">
+    <!-- Conteneur principal -->
+    <div class="container-fluid p-0 m-0 position-relative h-100">
+      <!-- Canvas occupant tout l'arrière-plan -->
+      <canvas id="myCanvas"></canvas>
+
+      <!-- Formulaire de login, centré au milieu de la page -->
+      <div class="login-container">
+        <img src="./img/LOGO1.png" alt="Logo Quiz" width="72" height="72" class="mb-3 d-block mx-auto">
+        <h3 class="login-title">Bienvenue</h3>
+
+        <form id="login-form">
+          <div class="mb-3">
+            <label for="Nom" class="form-label">Nom Complet</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Votre Nom"
+              required
+            />
+          </div>
+
+          <!-- Liste déroulante pour le choix des spécialités -->
+          <div class="mb-3">
+            <label for="choice" class="form-label">Votre spécialité</label>
+            <select id="specialite" class="form-control mb-2" required>
+              <option value="gestion de projet">Gestion de projet</option>
+              <option value="marketing digital">Marketing digital</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">
+            Commencer Le Test
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer minimaliste avec renvoi vers le site et réseaux sociaux -->
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container text-center">
+      <p class="mb-1">&copy; 2025 <a href="https://www.mostclient.site" target="_blank">Mostclient</a> Tous droits réservés.</p>
+      <p>
+        Suivez-nous :
+        <a href="https://www.facebook.com/OgoulaJesse/" target="_blank">Facebook</a> -
+        <a href="https://www.linkedin.com/in/ogoulajesse/" target="_blank">Linkedin</a> 
+      </p>
+    </div>
+  </footer>
+
+  <!-- JS Bootstrap 5 (pour certaines fonctionnalités) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Votre script personnel -->
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        localStorage.setItem('userName', username);
+        const specialite = document.getElementById('specialite').value;
+        localStorage.setItem('specialite', specialite);
+        let quizPage;
+        if (specialite === 'gestion de projet') {
+            quizPage = 'quiz-gestion-projet.html';
+        } else if (specialite === 'marketing digital') {
+            quizPage = 'quiz-marketing-digital.html';
+        } else {
+            alert('Spécialité non reconnue.');
+            return;
+        }
+        window.location.href = quizPage;
+    });
+  </script>
+</body>
+</html>

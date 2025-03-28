@@ -1,0 +1,304 @@
+body{
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background-color: #05203A;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container {
+    display: flex;
+    width: 50%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.container1 {
+    display: flex;
+    width: 1200px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.sidebar, .progress-sidebar {
+    width: 200px;
+    padding: 20px;
+    background: #05203A;
+    color: white;
+}
+
+#time{
+    font-weight: bolder;
+    color: #f39c12;
+    font-size: 30px;
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#timer{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background-color: #fff8e6;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: #85640a;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: inline-block;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+.sidebar .active {
+    font-weight: bold;
+    color: #f39c12;
+}
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content{
+    color: #05203A;
+}
+#question-container {
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#options-container label {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#next-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff0000;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#submit-btn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff0000;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#send-email-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff0000;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.progress-bar-container {
+    height: 10px;
+    background: #34495e;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #f39c12;
+    border-radius: 5px;
+}
+
+#classe {
+    color: rgb(255, 0, 0);
+    text-transform: uppercase;
+    font-size: 40px;
+    border-radius: 2rem;
+}
+
+
+
+/* Footer */
+.footer {
+    bottom: 0;
+    font-size: 0.9rem;
+    display: flex;
+    text-align: center;
+}
+
+#footer P{
+    color: white;
+}
+
+#footer p a {
+    color: red; /* Définit la couleur du lien en rouge */
+}
+
+#restart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #3c640e;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#infractions {
+    color: rgb(255, 0, 0);
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 18px;
+    background-color: #ffe6e6;
+    padding: 8px 23px;
+    border-radius: 8px;
+    color: #cc0000;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: inline-block;
+}
+
+/* Style pour le pop-up */
+.popup {
+    display: none; /* Initialement caché */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centrage vertical et horizontal */
+    padding: 20px;
+    border: 1px solid #888; /* Bordure grise légère */
+    border-radius: 5px; /* Bords arrondis */
+    width: 80%;      /* Largeur relative */
+    max-width: 600px; /* Largeur maximale pour les grands écrans */
+}
+
+.popup-content ul {
+    line-height: 1.6; /* Augmentation de l'interligne pour les consignes */
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute; /* Positionnement absolu par rapport à .popup-content */
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#start-quiz-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff0000;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#webcam-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+    overflow: hidden;
+}
+
+#webcam-container h3 {
+    color: black; /* Titre en noir */
+}
+
+#webcam-video {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+#user-greeting {
+    font-weight: bold; /* Met le texte en gras */
+    color: #f39c12;    /* Change la couleur pour contraster avec le blanc, par exemple, orange */
+    margin-bottom: 10px; /* Ajoute un peu d'espace en dessous pour séparer des modules */
+    text-align: center;  /* Centre le texte pour une meilleure présentation dans la sidebar */
+    font-size: 1.1em;   /* Augmente légèrement la taille de la police pour la faire ressortir */
+    background-color: #fff8e6; /* Couleur de fond de timer */
+    padding: 8px 15px; /* Padding de timer */
+    border-radius: 8px; /* Bordure arrondie de timer */
+    color: #85640a; /* Couleur du texte de timer */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre de timer */
+    display: inline-block; /* Pour que le padding et border-radius fonctionnent correctement */
+}
+
+.sidebar h2 {
+    font-weight: bold; /* Met le texte en gras */
+    color: #f39c12;    /* Change la couleur pour contraster avec le blanc, par exemple, orange */
+    text-align: center;  /* Centre le texte pour une meilleure présentation dans la sidebar */
+    font-size: 1.5em;   /* Augmente légèrement la taille de la police pour la faire ressortir */
+    background-color: #ffe6e6; /* Couleur de fond de timer */
+    padding: 6px 15px; /* Padding de timer */
+    border-radius: 8px; /* Bordure arrondie de timer */
+    color: #85640a; /* Couleur du texte de timer */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre de timer */
+    display: inline-block; /* Pour que le padding et border-radius fonctionnent correctement */
+    margin-top: 20px; /* Ajoute de l'espace au-dessus du titre Modules */
+    margin-bottom: -10px; /* Ajoute de l'espace en dessous du titre Modules */
+}
+
+.main-content h2 {
+    font-weight: bold;
+    color: #f39c12;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: #fff8e6;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: #85640a;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}

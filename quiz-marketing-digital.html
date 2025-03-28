@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM - Marketing digital</title>
+    <link rel="stylesheet" href="mathstyle.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="container1">
+        <aside class="sidebar">
+            <p id="user-greeting">Bonjour, <span id="user-name"></span></p>
+            <h2>Modules</h2>
+            <ul>
+                {{!-- Les modules seront chargés ici par Javascript --}}
+            </ul>
+        </aside>
+        <main class="main-content">
+            <h2 id="module-name"></h2> 
+            <p id="progress-text">0/25 Questions</p>
+            <div id="question-container">
+                <h2 id="question-text">Chargement...</h2>
+                <div id="options-container"></div>
+                <button id="next-btn">Suivant</button>
+                <button id="submit-btn" style="display: none;">Soumettre</button>
+            </div>
+        </main>
+        <aside class="progress-sidebar">
+            <div id="timer">Temps restant : <span id="time">02:00:00</span></div>
+            <div class="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div id="infractions">Infractions: 0</div>
+            <div id="webcam-container">
+                <h3>Flux Webcam</h3>
+                <video id="webcam-video" autoplay muted></video>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Pop-up d'instructions -->
+    <div id="instructions-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" id="close-popup">&times;</span>
+            <h2>Instructions du QCM</h2>
+            <p>Bienvenue au QCM. Voici quelques consignes importantes :</p>
+            <ul>
+                <li>Le QCM est chronométré. Vous avez un temps limité pour répondre à toutes les questions.</li>
+                <li>Il est interdit d'utiliser les raccourcis clavier (Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+A), le clic droit et la touche Windows.</li>
+                <li>Toute tentative de triche entraînera l'interruption du QCM.</li>
+                <li>Ne quittez pas l'onglet du QCM pendant le test.</li>
+                <li>Activer la caméra de votre pc</li>
+                <li>Prenez votre temps pour lire attentivement chaque question avant de répondre.</li>
+            </ul>
+            <button id="start-quiz-btn">Commencer le Quiz</button>
+        </div>
+    </div>
+</body>
+</html>
