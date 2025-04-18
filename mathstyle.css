@@ -371,7 +371,8 @@ body{
     }
 
     .sidebar.open {
-        left: 0; /* Afficher la sidebar quand la classe .open est ajoutée */
+        left: 0; 
+        padding-top: 41px;/* Afficher la sidebar quand la classe .open est ajoutée */
     }
 
     .hamburger-btn {
@@ -417,7 +418,7 @@ body{
     #question-container {
         padding: 15px;
         max-width: 95%; /* Limiter la largeur pour ne pas toucher les bords */
-        margin: 20px auto; /* Centrer horizontalement et ajouter marge verticale */
+        margin: -15px auto; /* Centrer horizontalement et ajouter marge verticale */
     }
 
     #time {
@@ -432,6 +433,8 @@ body{
     #user-greeting, .sidebar h2, .main-content h2 {
         font-size: 1em; /* Ajuster la taille des titres */
         padding: 6px 10px;
+        margin-top: 47px;
+
     }
 
     #next-btn, #submit-btn, #send-email-btn, #restart-btn, #start-quiz-btn {
@@ -455,11 +458,12 @@ body{
 /* Pour les très petits écrans (ex: moins de 576px) */
 @media (max-width: 575.98px) {
      .sidebar, .progress-sidebar {
-       max-height: 200px; /* Réduire encore la hauteur max */
+       max-height: 462px; /* Réduire encore la hauteur max */
        padding: 15px;
     }
      .main-content {
-        padding: 10px;
+        padding-top: 80px;
+        padding-left: 2px;
     }
      #options-container label {
         padding: 8px;
