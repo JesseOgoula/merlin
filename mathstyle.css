@@ -395,7 +395,7 @@ body{
 @media (max-width: 767.98px) {
     body {
         height: auto; /* Permettre au body de grandir avec le contenu */
-        padding-bottom: 60px; /* Ajouter de l'espace pour le footer fixe potentiel */
+         /* Ajouter de l'espace pour le footer fixe potentiel */
     }
     .container1 {
         width: 100%;
@@ -433,7 +433,7 @@ body{
     #user-greeting, .sidebar h2, .main-content h2 {
         font-size: 1em; /* Ajuster la taille des titres */
         padding: 6px 10px;
-        margin-top: 47px;
+        margin-top: 20px;
 
     }
 
