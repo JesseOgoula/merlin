@@ -58,6 +58,17 @@ document.addEventListener('keyup', function(e) {
     }
 });
 
+// Fonction pour détecter si la souris quitte la fenêtre
+document.addEventListener('mouseout', function(e) {
+    // Vérifier si la souris sort par le haut, la gauche ou la droite de la fenêtre
+    // e.relatedTarget et e.toElement sont null quand la souris quitte la fenêtre du navigateur
+    if (!e.relatedTarget && !e.toElement && !quizFinished) {
+        infractions++;
+        updateInfractions();
+        alert("Attention! Sortir la souris de la fenêtre du quiz est considéré comme une infraction.");
+    }
+});
+
 function updateInfractions() {
     document.getElementById('infractions').textContent = 'Infractions: ' + infractions;
     if (infractions >= 3) {

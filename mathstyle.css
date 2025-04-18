@@ -4,9 +4,10 @@ body{
     height: 100vh;
     margin: 0;
     background-color: #05203A;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Restauré pour le bureau */
+    align-items: center;   /* Restauré pour le bureau */
     flex-direction: column;
+    /* min-height: 100vh; */ /* Supprimé du style général */
 }
 .container {
     display: flex;
@@ -150,10 +151,11 @@ body{
 
 /* Footer */
 .footer {
-    bottom: 0;
+    bottom: 0; /* Restauré */
     font-size: 0.9rem;
-    display: flex;
+    display: flex; /* Restauré */
     text-align: center;
+    /* Styles spécifiques au mobile ajoutés dans la media query */
 }
 
 #footer P{
@@ -394,8 +396,9 @@ body{
 /* Pour les téléphones mobiles (ex: moins de 768px) */
 @media (max-width: 767.98px) {
     body {
-        height: auto; /* Permettre au body de grandir avec le contenu */
-         /* Ajouter de l'espace pour le footer fixe potentiel */
+        min-height: 100vh; /* Assurer que le body prend au moins toute la hauteur sur mobile */
+        justify-content: space-between; /* Pousse le footer en bas */
+        align-items: center; /* Centre le container horizontalement */
     }
     .container1 {
         width: 100%;
@@ -411,8 +414,19 @@ body{
        max-height: 250px; /* Ajuster la hauteur max */
     }
 
+    /* Ajustement pour le conteneur principal de resultats.html */
+    .container {
+        width: 90%; /* Augmenter la largeur du conteneur sur mobile */
+        margin-top: 125px ; /* Centrer et ajouter une marge verticale */
+        flex-direction: column; /* Assurer l'empilement vertical */
+    }
+
     .main-content {
         padding: 15px; /* Réduire le padding */
+        width: 80%; /* Définir la largeur à 80% */
+        margin-left: auto; /* Centrer horizontalement */
+        margin-right: auto; /* Centrer horizontalement */
+        /* Le padding-top: 60px; est hérité de la media query précédente pour le hamburger */
     }
 
     #question-container {
@@ -452,6 +466,23 @@ body{
         top: 5px;
         right: 10px;
         font-size: 24px;
+    }
+
+    /* Styles spécifiques pour le footer sur mobile */
+    #footer {
+        width: 100%;
+        padding: 10px 0;
+        background-color: #05203A; /* Assurer la couleur de fond */
+        color: white; /* Assurer la couleur du texte */
+        margin-top: 0; /* Annuler la marge auto générale si elle existait */
+        position: relative; /* Assurer le positionnement relatif normal */
+        bottom: auto; /* Annuler le bottom général */
+        display: block; /* Remplacer display:flex général */
+        text-align: center; /* Centrer le texte du footer sur mobile */
+    }
+
+    #footer p { /* Assurer la couleur du texte dans le footer */
+        color: white;
     }
 }
 

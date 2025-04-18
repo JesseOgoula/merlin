@@ -6,7 +6,95 @@
     <title>Résultats du QCM</title>
     <link rel="stylesheet" href="mathstyle.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="resultats.js"></script>
+    <style>
+        #certificate-container {
+            display: none; /* Caché par défaut */
+            width: 800px; /* Ajuster selon besoin */
+            margin: 20px auto;
+            padding: 40px;
+            border: 10px solid #003366; /* Bleu foncé */
+            background-color: #fdfbf4; /* Crème clair */
+            font-family: sans-serif;
+            position: relative; /* Pour les éléments décoratifs */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #certificate-content {
+             border: 2px solid #d4af37; /* Or */
+             padding: 30px;
+             text-align: center;
+        }
+        .certificate-title {
+            font-size: 3em;
+            color: #003366; /* Bleu foncé */
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .certificate-subtitle {
+            font-size: 1.2em;
+            background-color: #d4af37; /* Or */
+            color: #003366; /* Bleu foncé */
+            padding: 5px 15px;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+        .certificate-name {
+            font-size: 2.5em;
+            color: #003366; /* Bleu foncé */
+            margin-bottom: 20px;
+        }
+        .certificate-text {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .certificate-footer {
+            display: flex;
+            justify-content: center; /* Centrer le contenu */
+            align-items: center; /* Centrer verticalement aussi si nécessaire */
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .certificate-signature {
+            /* Style pour la signature si nécessaire */
+            font-style: italic;
+        }
+        #download-cert-btn {
+            display: none; /* Caché par défaut */
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        #download-cert-btn:hover {
+            background-color: #0056b3;
+        }
+        /* Éléments décoratifs (simplifiés) */
+         #certificate-container::before, #certificate-container::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #003366; /* Bleu foncé */
+        }
+        #certificate-container::before {
+            top: -10px;
+            left: -10px;
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+        }
+         #certificate-container::after {
+            bottom: -10px;
+            right: -10px;
+             clip-path: polygon(100% 100%, 0 100%, 100% 0);
+        }
+
+    </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
     <div class="container">
@@ -18,11 +106,36 @@
                 <p>Spécialité: <span id="specialite"></span></p>
                 <p>Score final: <span id="score"></span>%</p>
 +                <p>Temps écoulé: <span id="elapsed-time"></span></p>
-+                <h3>Scores par module :</h3><ul id="module-scores-list"></ul>
                 <h1 id="classe"></h1>
                 <p id="message"></p>
                 <p id="cheated"></p>
             </form>
+
+            <button id="download-cert-btn">Télécharger le certificat (PDF)</button>
+
+            <!-- Structure du certificat (cachée) -->
+            <div id="certificate-container">
+                <div id="certificate-content">
+                    <div class="certificate-title">CERTIFICAT</div>
+                    <div class="certificate-subtitle">DE RÉUSSITE</div>
+
+                    <div class="certificate-name" id="cert-user-name">[Nom de l'utilisateur]</div>
+
+                    <div class="certificate-text">
+                        a complété avec succès le quiz de <strong id="cert-specialite">[Spécialité]</strong>
+                        le <span id="cert-date">[Date]</span> avec un score de <strong id="cert-score">[Score] %</strong>.
+                    </div>
+                    <div class="certificate-text" style="margin-top: 20px; font-size: 0.9em;">
+                        Certificat généré via <a href="https://www.merlin.ai" target="_blank" style="color: #003366; text-decoration: none;">www.merlin.ai</a>
+                    </div>
+                    <div class="certificate-footer">
+                         <div>
+                             <div>Date de génération : <span id="cert-sign-date">[Date]</span></div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
     </div>
 

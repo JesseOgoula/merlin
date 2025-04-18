@@ -70,49 +70,80 @@ document.addEventListener('DOMContentLoaded', async function() { // Rendre la fo
         }
     }
 
-    const moduleScoresListElement = document.getElementById('module-scores-list');
-    let moduleDetailsText = "Aucun détail disponible."; // Pour l'email
-    if (moduleScoresListElement && moduleScoresString && specialite) {
-        try {
-            const moduleScores = JSON.parse(moduleScoresString);
-            let fileName;
-            const lowerCaseSpecialite = specialite.toLowerCase();
-            if (lowerCaseSpecialite === 'gestion de projet') {
-                fileName = 'gestion-projet';
-            } else {
-                fileName = lowerCaseSpecialite.replace(/ /g, '-');
-            }
-            const filePath = `${fileName}.json`;
+    // --- Logique du Certificat --- (Section des scores par module supprimée)
+    const SUCCESS_THRESHOLD = 70; // Définir le seuil de réussite en pourcentage
 
-            const response = await fetch(filePath);
-            if (!response.ok) {
-                throw new Error(`Impossible de charger les données du quiz pour les noms de modules: ${response.status}`);
-            }
-            const quizData = await response.json();
+    // Afficher le bouton de téléchargement si le score est suffisant et pas de triche
+    if (parseFloat(score) >= SUCCESS_THRESHOLD && cheated !== 'true') {
+        const certificateContainer = document.getElementById('certificate-container');
+        const downloadBtn = document.getElementById('download-cert-btn');
+        const certUserName = document.getElementById('cert-user-name');
+        const certSpecialite = document.getElementById('cert-specialite');
+        const certDate = document.getElementById('cert-date');
+        const certSignDate = document.getElementById('cert-sign-date');
+        const certScore = document.getElementById('cert-score'); // Ajouter l'élément pour le score
 
-            moduleScoresListElement.innerHTML = '';
-            moduleDetailsText = ''; // Réinitialiser pour l'email
-            quizData.forEach((module, index) => {
-                const scoreForModule = moduleScores[index] !== undefined ? moduleScores[index] : 0;
-                const totalQuestionsInModule = module.questions.length;
-                const moduleName = module.moduleName || `Module ${index + 1}`;
+        if (certificateContainer && downloadBtn && certUserName && certSpecialite && certDate && certSignDate && certScore) { // Ajouter certScore à la vérification
+            // Remplir les données du certificat
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 
-                const listItem = document.createElement('li');
-                listItem.textContent = `${moduleName}: ${scoreForModule} / ${totalQuestionsInModule}`;
-                moduleScoresListElement.appendChild(listItem);
+            // Utiliser les données du localStorage ou des valeurs par défaut pour le test
+            const finalUserName = userName || "Nom Exemple";
+            const finalSpecialite = specialite || "Gestion de Projet Exemple";
 
-                // Construire la chaîne pour l'email
-                moduleDetailsText += `${moduleName}: ${scoreForModule} / ${totalQuestionsInModule}\n`;
+            certUserName.textContent = finalUserName;
+            certSpecialite.textContent = finalSpecialite;
+            certDate.textContent = formattedDate;
+            certSignDate.textContent = formattedDate; // Utiliser la même date pour la signature
+            certScore.textContent = formattedScore; // Ajouter le score formaté
+
+            // Rendre le bouton visible, mais garder le conteneur caché sur la page
+            certificateContainer.style.display = 'none'; // Garder caché sur la page
+            downloadBtn.style.display = 'inline-block'; // Afficher le bouton
+
+            // Ajouter l'événement pour le téléchargement
+            downloadBtn.addEventListener('click', function() {
+                // Utiliser les noms finaux pour le nom de fichier
+                generateCertificatePDF(certificateContainer, finalUserName, finalSpecialite);
             });
 
-        } catch (error) {
-            console.error("Erreur lors de l'affichage des scores par module:", error);
-            moduleScoresListElement.innerHTML = '<li>Erreur lors du chargement des détails des modules.</li>';
-            moduleDetailsText = "Erreur lors du chargement des détails.";
+             // Cacher temporairement après l'ajout de l'event listener si on ne veut pas le voir sur la page
+             // certificateContainer.style.display = 'none';
+             // Ou laisser visible si on veut que l'utilisateur voie le certificat avant de télécharger
+
+        } else {
+            console.error("Un ou plusieurs éléments du certificat (y compris le score) sont manquants dans le HTML.");
         }
-    } else if (moduleScoresListElement) {
-         moduleScoresListElement.innerHTML = '<li>Aucun détail de score par module disponible.</li>';
+    } // Fin du if (score >= SUCCESS_THRESHOLD && cheated !== 'true')
+
+    function generateCertificatePDF(element, studentName, courseName) {
+        console.log("Préparation de la génération du PDF...");
+        const filename = `Certificat_${studentName}_${courseName}.pdf`.replace(/[^a-zA-Z0-9_.-]/g, '_'); // Nettoyer le nom de fichier
+
+        // Rendre l'élément temporairement visible pour html2pdf
+        element.style.display = 'block';
+
+        const opt = {
+          margin:       0.5, // Marges en pouces
+          filename:     filename,
+          image:        { type: 'jpeg', quality: 0.98 }, // Qualité de l'image
+          html2canvas:  { scale: 2, logging: true, useCORS: true }, // Augmenter l'échelle pour une meilleure résolution
+          jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' } // Format lettre paysage
+        };
+
+        // Utiliser html2pdf pour générer le PDF
+        html2pdf().from(element).set(opt).save().then(() => {
+            console.log("PDF généré et téléchargement lancé.");
+            // Cacher à nouveau l'élément après la génération
+            element.style.display = 'none';
+        }).catch(err => {
+            console.error("Erreur lors de la génération du PDF:", err);
+            // Cacher aussi en cas d'erreur
+             element.style.display = 'none';
+        });
     }
+
 
     // --- Envoi de l'e-mail ---
     async function sendEmailWithResults() {
@@ -129,7 +160,7 @@ document.addEventListener('DOMContentLoaded', async function() { // Rendre la fo
             specialite: specialite || "N/A",
             score: formattedScore,
             elapsed_time: formattedElapsedTime,
-            module_details: moduleDetailsText.trim(), // Enlever les espaces superflus
+            // module_details: moduleDetailsText.trim(), // Supprimé car l'affichage est retiré
             cheated_status: cheatedStatusText,
             to_email: DESTINATION_EMAIL // Si votre template utilise une variable pour l'email de destination
             // Ajoutez d'autres variables si nécessaire (ex: date, etc.)
