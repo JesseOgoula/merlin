@@ -1,0 +1,772 @@
+[
+    {
+        "moduleName": " Fondamentaux de la gestion de projet",
+        "questions": [
+    {
+        "text": "Qu'est‑ce que la gestion de projet ?",
+        "options": [
+          "La planification et l'exécution de tâches pour atteindre des objectifs définis",
+          "Le suivi de la production industrielle",
+          "L'analyse financière",
+          "La gestion des ressources humaines"
+        ],
+        "answer": 0
+      },
+    {
+        "text": "Quelle tendance est prévue pour l'emploi en gestion de projet sur la prochaine décennie ?",
+        "options": [
+          "Une diminution drastique",
+          "Une stagnation",
+          "Une croissance significative",
+          "Une croissance modeste"
+        ],
+        "answer": 2
+      },
+    {
+        "text": "Quel défi majeur est mis en évidence dans le domaine de la gestion de projet ?",
+        "options": [
+          "Un excès de talents",
+          "Un déficit de talents",
+          "Un manque de projets",
+          "Une surqualification des chefs de projet"
+        ],
+        "answer": 1
+      },
+    {
+        "text": "Pourquoi adopter une approche structurée dans la gestion de projet ?",
+        "options": [
+          "Réduire le temps de développement",
+          "Garantir le succès des projets",
+          "Minimiser uniquement les coûts",
+          "Augmenter la complexité des projets"
+        ],
+        "answer": 1
+      },
+    {
+        "text": "Quel est le rôle principal du Scrum Master dans Scrum ?",
+        "options": [
+          "Gérer l'équipe",
+          "Servir l'équipe en facilitant le processus",
+          "Décider des tâches",
+          "Imposer les décisions"
+        ],
+        "answer": 1
+      },
+    {
+        "text": "Que représente le Sprint dans Scrum ?",
+        "options": [
+          "Une réunion quotidienne",
+          "Une période de travail itérative",
+          "Une phase de planification",
+          "Une phase de clôture de projet"
+        ],
+        "answer": 1
+      },
+    {
+        "text": "Quel document permet de mesurer la satisfaction des professionnels de la gestion de projet ?",
+        "options": [
+          "Le rapport annuel",
+          "Un sondage sur la profession",
+          "Le guide de certification",
+          "L'analyse de marché"
+        ],
+        "answer": 1
+      },
+    {
+        "text": "Quel objectif principal permet d'analyser l'évolution de la profession ?",
+        "options": [
+          "Identifier la technologie utilisée",
+          "Comprendre les pratiques et la santé de la profession",
+          "Étudier la structure organisationnelle",
+          "Définir les normes comptables"
+        ],
+        "answer": 1
+      },
+    {
+        "text": "Quels sont les éléments essentiels d'une gestion de projet efficace ?",
+        "options": [
+          "La planification, la communication et le suivi",
+          "Le recrutement, la formation et la promotion",
+          "La vente, le marketing et la distribution",
+          "La conception, la production et la distribution"
+        ],
+        "answer": 0
+      },
+    {
+        "text": "Qu'est ce qui caractérise l'approche Scrum ?",
+        "options": [
+          "Une documentation exhaustive",
+          "L'inspection et l'adaptation continue",
+          "Une hiérarchie stricte",
+          "Une planification à long terme"
+        ],
+        "answer": 1
+      },
+    {
+        "text": "Quelle est la principale raison d'un déficit de talents en gestion de projet ?",
+        "options": [
+          "Une baisse de l'intérêt pour le domaine",
+          "Une croissance rapide nécessitant de nouvelles compétences",
+          "Une diminution de l'offre de formations",
+          "Un excès de qualifications"
+        ],
+        "answer": 1
+      },
+    {
+        "text": "Quel est l'objectif fondamental de la gestion de projet ?",
+        "options": [
+          "Augmenter uniquement les bénéfices",
+          "Gérer les ressources pour atteindre des objectifs",
+          "Réduire uniquement les coûts de production",
+          "Accroître la productivité des employés"
+        ],
+        "answer": 1
+      },
+    {
+        "text": "Que représente le terme Scrum dans la gestion de projet Agile ?",
+        "options": [
+          "Une réunion d'équipe",
+          "Un cadre de travail",
+          "Un outil de gestion du temps",
+          "Une méthode hiérarchique"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "La croissance de l'emploi en gestion de projet implique :",
+        "options": [
+          "Une stagnation du marché",
+          "Une augmentation de la demande de professionnels",
+          "Un déclin de la profession",
+          "Une réorientation vers d'autres domaines"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "Quel est l'objectif principal d'un rapport sur l'état de la profession ?",
+        "options": [
+          "Évaluer les tendances et les défis du secteur",
+          "Fournir des stratégies de vente",
+          "Définir les salaires",
+          "Identifier les technologies obsolètes"
+        ],
+        "answer": 0
+      },
+      {
+        "text": "Quelle compétence est essentielle pour un chef de projet ?",
+        "options": [
+          "La maîtrise des langages de programmation",
+          "La communication efficace",
+          "La connaissance en marketing",
+          "La gestion des stocks"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "Quel rôle joue la flexibilité dans Scrum ?",
+        "options": [
+          "Permet de changer de direction en fonction des retours",
+          "Rendre le processus rigide",
+          "Empêcher la révision des objectifs",
+          "Décourager l'innovation"
+        ],
+        "answer": 0
+      },
+      {
+        "text": "Quel est l'impact de l'évolution technologique sur la gestion de projet ?",
+        "options": [
+          "Aucune influence",
+          "Accroît la complexité des projets",
+          "Favorise l'émergence de nouveaux outils",
+          "Réduit le besoin de formation"
+        ],
+        "answer": 2
+      },
+      {
+        "text": "Quelle approche favorise l'inspection régulière et l'adaptation ?",
+        "options": [
+          "La méthode Waterfall",
+          "La méthode Scrum",
+          "La gestion de crise",
+          "La planification stratégique"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "Qui est responsable de maximiser la valeur du produit dans Scrum ?",
+        "options": [
+          "Le Scrum Master",
+          "Le Product Owner",
+          "L'équipe de développement",
+          "Le client"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "Que décrit un rapport sur la croissance de l'emploi en gestion de projet ?",
+        "options": [
+          "Les statistiques sur les technologies de l'information",
+          "Les tendances en matière d'emploi et de compétences",
+          "La répartition géographique des projets",
+          "Les méthodes de formation pour chefs de projet"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "Quel avantage clé offre le management de projet ?",
+        "options": [
+          "Augmenter la confusion dans l'équipe",
+          "Clarifier les objectifs et les responsabilités",
+          "Réduire la communication",
+          "Limiter l'innovation"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "La méthode Scrum se caractérise par :",
+        "options": [
+          "Une planification unique en début de projet",
+          "Des itérations courtes et récurrentes",
+          "Un processus sans rétroaction",
+          "Un management autoritaire"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "Quel document permet de comprendre l'impact de la technologie sur la gestion de projet ?",
+        "options": [
+          "Le guide Scrum",
+          "Un rapport sur l'état de la profession",
+          "Un article sur la gestion de projet",
+          "Un rapport sur la croissance de l'emploi"
+        ],
+        "answer": 3
+      },
+      {
+        "text": "Quel est le principal objectif d'un Sprint dans Scrum ?",
+        "options": [
+          "Concevoir un produit final",
+          "Livrer un incrément de produit fonctionnel",
+          "Planifier l'ensemble du projet",
+          "Réunir l'équipe pour discuter"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "Comment la gestion de projet contribue-t-elle à la réussite d'une organisation ?",
+        "options": [
+          "En améliorant la coordination des ressources et l'atteinte des objectifs",
+          "En diminuant la visibilité des projets",
+          "En limitant la communication entre départements",
+          "En éliminant les risques"
+        ],
+        "answer": 0
+      },
+      {
+        "text": "Quelle relation existe-t-il entre la croissance de l'emploi et le déficit de talents ?",
+        "options": [
+          "La croissance ne crée aucun déficit",
+          "La croissance génère un besoin accru de professionnels qualifiés",
+          "Le déficit diminue avec la croissance",
+          "La croissance est due à un surplus de talents"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "Dans Scrum, l'équipe doit être :",
+        "options": [
+          "Auto-organisée",
+          "Dirigée par un manager externe",
+          "Hiérarchisée strictement",
+          "Composée uniquement de développeurs"
+        ],
+        "answer": 0
+      },
+      {
+        "text": "Quel rôle joue la rétroaction dans le processus Scrum ?",
+        "options": [
+          "Elle permet d'ignorer les erreurs",
+          "Elle favorise l'amélioration continue",
+          "Elle est facultative",
+          "Elle complique le projet"
+        ],
+        "answer": 1
+      },
+      {
+        "text": "Quel facteur est déterminant dans le succès d'un projet ?",
+        "options": [
+          "La qualité de la communication",
+          "La rapidité d'exécution sans planification",
+          "Le budget alloué uniquement",
+          "Le nombre de réunions"
+        ],
+        "answer": 0
+      }
+        ]
+    },
+    {
+        "moduleName": "La valeur d'un gestionnaire de projet",
+        "questions": [
+            {
+                "text": "Qui peut être considéré comme un chef de projet ?",
+                "options": [
+                    "Uniquement un manager d'équipes",
+                    "Un professionnel responsable de la planification, de l'exécution et du suivi des projets",
+                    "Un technicien spécialisé",
+                    "Un consultant externe"
+                ],
+                "answer": 1
+            },
+            {
+                "text": "Quel aspect est valorisé dans le rôle d'un chef de projet ?",
+                "options": [
+                    "La capacité à gérer efficacement les ressources",
+                    "La spécialisation dans un domaine technique uniquement",
+                    "La gestion exclusive des ressources humaines",
+                    "La réduction du temps de travail"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Quel document présente un aperçu du contenu de l'examen PMP ?",
+                "options": [
+                    "Le guide Scrum",
+                    "Un aperçu du contenu de l'examen PMP",
+                    "Un rapport sur la croissance de l'emploi",
+                    "Un sondage sur la profession"
+                ],
+                "answer": 1
+            },
+            {
+                "text": "Quel est l'objectif principal de l'examen PMP ?",
+                "options": [
+                    "Mesurer les compétences en gestion de projet",
+                    "Tester des connaissances en informatique",
+                    "Évaluer des compétences en vente",
+                    "Déterminer le salaire d'un chef de projet"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Quelles compétences sont essentielles pour un chef de projet ?",
+                "options": [
+                    "La gestion du temps, la communication et la résolution de problèmes",
+                    "La maîtrise de logiciels spécifiques uniquement",
+                    "La capacité à coder",
+                    "La gestion des stocks"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Le rôle d'un chef de projet inclut :",
+                "options": [
+                    "La planification et l'exécution des projets",
+                    "La maintenance des équipements uniquement",
+                    "La gestion des finances personnelles",
+                    "La production industrielle"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Quel avantage offre la certification PMP ?",
+                "options": [
+                    "Une reconnaissance internationale",
+                    "L'exclusivité au sein d'une entreprise",
+                    "La garantie d'un poste permanent",
+                    "Une augmentation automatique du salaire"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Quel domaine est évalué dans le contenu de l'examen PMP ?",
+                "options": [
+                    "La gestion des communications",
+                    "La conception de produits",
+                    "La programmation informatique",
+                    "La gestion des ventes"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Quel rôle stratégique joue un chef de projet dans une équipe ?",
+                "options": [
+                    "Assurer la coordination et l'alignement des objectifs",
+                    "Se contenter d'exécuter les tâches",
+                    "Se concentrer uniquement sur les aspects financiers",
+                    "Ne pas communiquer avec les parties prenantes"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Comment la certification PMP contribue-t-elle à la réussite professionnelle ?",
+                "options": [
+                    "En attestant de la maîtrise des pratiques de gestion de projet",
+                    "En garantissant une promotion immédiate",
+                    "En augmentant les heures de travail",
+                    "En réduisant la complexité des projets"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Quel est l'impact d'un chef de projet efficace sur une équipe ?",
+                "options": [
+                    "Amélioration de la communication et de la productivité",
+                    "Augmentation des conflits internes",
+                    "Réduction de la coordination",
+                    "Diminution de l'engagement"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Quel rôle stratégique est mis en avant dans la gestion de projet ?",
+                "options": [
+                    "Le rôle de facilitateur",
+                    "Le rôle de superviseur hiérarchique strict",
+                    "Le rôle de simple exécutant",
+                    "Le rôle de technicien isolé"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Quel document détaille les domaines de connaissances évalués lors de l'examen PMP ?",
+                "options": [
+                    "Le guide Agile",
+                    "Un aperçu du contenu de l'examen PMP",
+                    "Un rapport sur la gestion des talents",
+                    "La documentation Scrum"
+                ],
+                "answer": 1
+            },
+            {
+                "text": "Quel défi est particulièrement présent pour un chef de projet ?",
+                "options": [
+                    "La gestion des parties prenantes",
+                    "L'optimisation du code",
+                    "La gestion des stocks",
+                    "La conception graphique"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "L'examen PMP évalue également la capacité à :",
+                "options": [
+                    "Gérer les risques",
+                    "Programmer des applications",
+                    "Développer des produits",
+                    "Concevoir des campagnes publicitaires"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "La valeur d'un chef de projet se mesure en :",
+                "options": [
+                    "La qualité de la planification et de l'exécution",
+                    "Le nombre de projets annulés",
+                    "La rapidité sans réflexion",
+                    "Le suivi des tendances marketing"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "La certification PMP est reconnue pour :",
+                "options": [
+                    "Ses critères stricts et son alignement avec les meilleures pratiques",
+                    "Son coût élevé uniquement",
+                    "Sa durée de formation limitée",
+                    "Son exclusivité régionale"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "Quel est l'impact de la gestion de projet sur la performance organisationnelle ?",
+                "options": [
+                    "Une amélioration notable",
+                    "Une dégradation",
+                    "Aucune influence",
+                    "Un impact négatif"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "La capacité à adapter les stratégies de gestion de projet est évaluée lors de l'examen PMP.",
+                "options": [
+                    "Vrai",
+                    "Faux",
+                    "Partiellement",
+                    "Sans importance"
+                ],
+                "answer": 0
+            },
+            {
+                "text": "La valeur d'un gestionnaire de projet réside principalement dans :",
+                "options": [
+                    "Sa capacité à optimiser les processus et mobiliser l'équipe",
+                    "Son habileté technique isolée",
+                    "Sa gestion des technologies",
+                    "Sa capacité à réduire les coûts sans compromis sur la qualité"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "moduleName": "Approches communes de gestion de projet et choix de méthodologie",
+        "questions": [
+            {
+                "text": "Quelle méthodologie est souvent associée à une approche séquentielle ?",
+                "options": ["La méthode Agile", "La méthode Waterfall", "La méthode Scrum", "La méthode Kanban"],
+                "answer": 1
+            },
+            {
+                "text": "Quelle méthodologie privilégie la flexibilité et l'adaptation ?",
+                "options": ["La méthode Waterfall", "La méthode Agile", "La méthode en cascade", "La méthode prédictive"],
+                "answer": 1
+            },
+            {
+                "text": "Le choix d'une méthodologie de gestion de projet dépend principalement de :",
+                "options": ["La taille du budget uniquement", "La nature et les exigences du projet", "Le nombre de membres de l'équipe", "La localisation géographique"],
+                "answer": 1
+            },
+            {
+                "text": "Dans la méthodologie Scrum, le terme « Sprint » désigne :",
+                "options": ["Une réunion de démarrage", "Une période fixe pour développer une partie du produit", "Une réunion de clôture", "Une phase de test uniquement"],
+                "answer": 1
+            },
+            {
+                "text": "Quelle méthodologie met l'accent sur la visualisation du travail en cours ?",
+                "options": ["La méthode Kanban", "La méthode Agile", "La méthode Waterfall", "La méthode PRINCE2"],
+                "answer": 0
+            },
+            {
+                "text": "La méthode Agile se caractérise par :",
+                "options": ["Une planification rigide", "Une approche itérative et incrémentale", "Un cycle de vie linéaire", "L'absence de rétroaction"],
+                "answer": 1
+            },
+            {
+                "text": "Quel est un avantage clé de l'approche Waterfall ?",
+                "options": ["Une meilleure planification initiale", "Une flexibilité maximale", "Une adaptation continue", "Une réactivité aux changements"],
+                "answer": 0
+            },
+            {
+                "text": "Pour des projets aux exigences bien définies dès le départ, quelle méthode est recommandée ?",
+                "options": ["La méthode Agile", "La méthode Waterfall", "La méthode Scrum", "La méthode Kanban"],
+                "answer": 1
+            },
+            {
+                "text": "Le choix de la méthodologie se fait en évaluant :",
+                "options": ["Les risques et l'incertitude", "Le temps de déjeuner", "Le nombre de réunions", "Le nombre de locaux disponibles"],
+                "answer": 0
+            },
+            {
+                "text": "Pour des projets nécessitant une collaboration étroite et des ajustements fréquents, quelle méthode est adaptée ?",
+                "options": ["Une forte prévisibilité", "Une collaboration étroite et des ajustements fréquents", "Une planification unique", "Un contrôle strict et rigide"],
+                "answer": 1
+            },
+            {
+                "text": "Une approche hybride combine :",
+                "options": ["Les avantages des méthodes prédictives et agiles", "Les avantages d'un management strict uniquement", "La gestion des ressources humaines uniquement", "L'approche hiérarchique avec la méthode Waterfall"],
+                "answer": 0
+            },
+            {
+                "text": "Quelle méthode est connue pour sa structure en cycles itératifs ?",
+                "options": ["La méthode en cascade", "La méthode Agile", "La planification linéaire", "La conception en V"],
+                "answer": 1
+            },
+            {
+                "text": "La flexibilité d'une méthodologie permet de :",
+                "options": ["Répondre efficacement aux changements", "Rendre le projet plus rigide", "Éviter toute modification du plan initial", "Allonger la durée du projet"],
+                "answer": 0
+            },
+            {
+                "text": "Quel critère est essentiel lors du choix d'une méthodologie ?",
+                "options": ["La couleur des documents", "La compréhension des besoins des parties prenantes", "La localisation du siège social", "La taille des bureaux"],
+                "answer": 1
+            },
+            {
+                "text": "La méthode Kanban utilise principalement :",
+                "options": ["Des tableaux visuels pour suivre l'avancement", "Des rapports écrits exclusivement", "Une documentation exhaustive", "Une approche cyclique sans visualisation"],
+                "answer": 0
+            },
+            {
+                "text": "Quel inconvénient peut présenter la méthode Waterfall ?",
+                "options": ["La difficulté d'adaptation aux changements", "Une trop grande flexibilité", "Le manque de structure", "Le risque de surcommunication"],
+                "answer": 0
+            },
+            {
+                "text": "La méthode Agile favorise :",
+                "options": ["La planification à long terme sans ajustement", "La réactivité aux retours d'expérience", "Une documentation exhaustive", "Une séparation stricte des phases"],
+                "answer": 1
+            },
+            {
+                "text": "Quel rôle joue l'analyse des risques dans le choix de la méthodologie ?",
+                "options": ["Aucun rôle", "Un rôle clé pour adapter l'approche", "Un rôle secondaire", "Un rôle exclusivement financier"],
+                "answer": 1
+            },
+            {
+                "text": "Quel avantage la méthode Agile offre-t-elle par rapport à la méthode Waterfall ?",
+                "options": ["Une meilleure planification initiale", "Une capacité accrue à intégrer les changements", "Une documentation plus complète", "Une structure de reporting plus stricte"],
+                "answer": 1
+            },
+            {
+                "text": "Quel critère peut influencer le choix entre une approche Agile et Waterfall ?",
+                "options": ["La volatilité des exigences du projet", "La taille de l'équipe uniquement", "La durée des réunions", "La localisation du bureau"],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "moduleName": "Le rôle du chef de projet au sein des structures organisationnelles",
+        "questions": [
+            {
+                "text": "Qu'est‑ce qu'une organisation matricielle ?",
+                "options": ["Une organisation avec une seule hiérarchie", "Une structure où les employés ont plusieurs supérieurs (fonctionnels et de projet)", "Une organisation sans structure", "Une structure purement fonctionnelle"],
+                "answer": 1
+            },
+            {
+                "text": "Quel avantage offre une organisation matricielle ?",
+                "options": ["Une meilleure allocation des ressources", "Une clarté hiérarchique absolue", "Une absence de conflits", "Une gestion simplifiée"],
+                "answer": 0
+            },
+            {
+                "text": "Quelle structure organisationnelle est caractérisée par une forte centralisation ?",
+                "options": ["Structure fonctionnelle", "Structure matricielle", "Structure projet", "Structure décentralisée"],
+                "answer": 0
+            },
+            {
+                "text": "Quel type de structure permet une grande flexibilité dans la gestion de projets ?",
+                "options": ["La structure projet", "La structure fonctionnelle", "La structure bureaucratique", "La structure hiérarchique"],
+                "answer": 0
+            },
+            {
+                "text": "Comment définir la culture organisationnelle ?",
+                "options": ["Un ensemble de valeurs et de croyances partagées", "Un document officiel", "Une structure hiérarchique", "Un manuel de procédures"],
+                "answer": 0
+            },
+            {
+                "text": "Quelle étape est essentielle pour une adoption réussie par l'utilisateur final ?",
+                "options": ["La communication proactive", "La réduction des interactions", "La minimisation des tests", "L'absence de formation"],
+                "answer": 0
+            },
+            {
+                "text": "Quel est l'objectif d'un organigramme ?",
+                "options": ["Illustrer la structure d'une organisation", "Calculer les budgets", "Définir des objectifs marketing", "Planifier des réunions"],
+                "answer": 0
+            },
+            {
+                "text": "Quel outil aide à concevoir la culture d'entreprise ?",
+                "options": ["Le Business Model Canvas", "Un outil de cartographie culturelle", "Le diagramme de Gantt", "La matrice SWOT"],
+                "answer": 1
+            },
+            {
+                "text": "Quel est l'objectif de la gestion du changement au niveau du projet ?",
+                "options": ["Gérer les transitions et l'adoption du changement", "Optimiser les profits", "Réduire les effectifs", "Augmenter la production"],
+                "answer": 0
+            },
+            {
+                "text": "Dans une organisation matricielle, que doit souvent faire le chef de projet ?",
+                "options": ["Gérer des conflits d'autorité entre différents managers", "Travailler seul", "Ignorer les supérieurs fonctionnels", "Se concentrer uniquement sur les aspects financiers"],
+                "answer": 0
+            },
+            {
+                "text": "Dans une structure fonctionnelle, quelle est généralement l'autorité du chef de projet ?",
+                "options": ["Une autorité limitée sur les ressources", "Un contrôle total", "Une absence de responsabilités", "Un rôle uniquement consultatif"],
+                "answer": 0
+            },
+            {
+                "text": "La culture organisationnelle influence :",
+                "options": ["Le comportement et la performance des employés", "Les revenus uniquement", "Les produits uniquement", "Les horaires de travail"],
+                "answer": 0
+            },
+            {
+                "text": "Quelle étape est primordiale lors de la gestion du changement ?",
+                "options": ["L'engagement des utilisateurs", "La réduction des réunions", "L'absence de feedback", "Une documentation complexe"],
+                "answer": 0
+            },
+            {
+                "text": "Un organigramme permet de :",
+                "options": ["Visualiser la répartition des responsabilités", "Augmenter les coûts de gestion", "Complexifier la structure", "Diminuer la clarté organisationnelle"],
+                "answer": 0
+            },
+            {
+                "text": "Quel outil aide les organisations à aligner leurs valeurs culturelles ?",
+                "options": ["Identifier et aligner les valeurs culturelles", "Déterminer le budget", "Planifier les horaires", "Concevoir des organigrammes"],
+                "answer": 0
+            },
+            {
+                "text": "La gestion du changement doit être :",
+                "options": ["Intégrée dès le début du projet", "Négligée pendant la phase de planification", "Réalisée après la mise en œuvre", "Gérée séparément du projet"],
+                "answer": 0
+            },
+            {
+                "text": "Dans une structure de projet, l'autorité du chef de projet est généralement :",
+                "options": ["Plus forte", "Inexistante", "Partagée équitablement", "Dépendante de la fonction"],
+                "answer": 0
+            },
+            {
+                "text": "Quel est l'un des défis majeurs d'une organisation matricielle ?",
+                "options": ["La gestion des conflits d'intérêts", "L'absence de communication", "La centralisation excessive", "La surcharge de documentation"],
+                "answer": 0
+            },
+            {
+                "text": "Pourquoi est-il important de comprendre la culture organisationnelle ?",
+                "options": ["Pour faciliter le changement", "Pour augmenter la complexité du projet", "Pour isoler les équipes", "Pour standardiser toutes les procédures"],
+                "answer": 0
+            },
+            {
+                "text": "Pour une adoption réussie par l'utilisateur final, il est nécessaire de :",
+                "options": ["Proposer une formation adaptée et un soutien continu", "Réduire le temps de formation", "Ignorer les retours d'expérience", "Automatiser totalement sans intervention humaine"],
+                "answer": 0
+            },
+            {
+                "text": "Dans un organigramme, quel élément est essentiel à représenter ?",
+                "options": ["Les relations hiérarchiques", "Les préférences personnelles", "Les résultats financiers", "Les horaires de travail"],
+                "answer": 0
+            },
+            {
+                "text": "L'approche de cartographie culturelle encourage à :",
+                "options": ["Comprendre les différences culturelles pour améliorer la collaboration", "Imposer une culture unique", "Ignorer les variations culturelles", "Se concentrer uniquement sur les profits"],
+                "answer": 0
+            },
+            {
+                "text": "La gestion du changement inclut :",
+                "options": ["L'implication des parties prenantes", "L'exclusion des utilisateurs finaux", "La documentation uniquement technique", "La planification financière exclusive"],
+                "answer": 0
+            },
+            {
+                "text": "Quel avantage présente une structure de projet par rapport à une structure fonctionnelle ?",
+                "options": ["Une prise de décision plus rapide", "Une spécialisation fonctionnelle accrue", "Un contrôle budgétaire strict", "Une communication limitée"],
+                "answer": 0
+            },
+            {
+                "text": "La structure matricielle permet de :",
+                "options": ["Optimiser l'utilisation des ressources dans divers projets", "Supprimer la communication entre départements", "Centraliser toutes les décisions", "Limiter l'autonomie des équipes"],
+                "answer": 0
+            },
+            {
+                "text": "La culture organisationnelle peut être un levier pour :",
+                "options": ["Stimuler l'innovation", "Réduire la productivité", "Imposer des règles strictes sans flexibilité", "Centraliser le pouvoir"],
+                "answer": 0
+            },
+            {
+                "text": "Quel élément est essentiel pour gérer le changement dans un projet ?",
+                "options": ["Une communication efficace", "L'absence de planification", "La décentralisation des décisions", "La suppression des retours d'expérience"],
+                "answer": 0
+            },
+            {
+                "text": "Dans une organisation fonctionnelle, comment le pouvoir est-il généralement réparti ?",
+                "options": ["Par fonction spécialisée", "De manière égale entre tous les employés", "Uniquement au niveau de la direction de projet", "De façon aléatoire"],
+                "answer": 0
+            },
+            {
+                "text": "Dans une structure matricielle, le rôle du chef de projet consiste à :",
+                "options": ["Coordonner les ressources de différents départements", "Se concentrer uniquement sur les tâches individuelles", "Ignorer les objectifs globaux", "Centraliser toutes les décisions sans consultation"],
+                "answer": 0
+            },
+            {
+                "text": "La gestion du changement dans un projet vise à :",
+                "options": ["Minimiser les perturbations lors de l'implémentation des changements", "Retarder l'implémentation", "Ignorer les résistances", "Supprimer toute rétroaction"],
+                "answer": 0
+            }
+        ]
+    }
+]

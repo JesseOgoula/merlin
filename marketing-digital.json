@@ -1,0 +1,522 @@
+[
+    {
+        "moduleName": "Fondamentaux du numérique",
+        "questions": [
+            {
+                "text": "Quelle est la fonction d'un moteur de recherche ?",
+                "options": ["Héberger des sites web", "Indexer et permettre de trouver des informations sur Internet", "Fournir un accès à des bases de données locales", "Créer des pages web"],
+                "answer": 1
+            },
+            {
+                "text": "Quel composant est responsable de l'exécution des instructions dans un ordinateur ?",
+                "options": ["Disque dur", "CPU", "Carte graphique", "Alimentation"],
+                "answer": 1
+            },
+            {
+                "text": "Le référent digital a pour mission principale :",
+                "options": ["Créer des campagnes publicitaires", "Accompagner la transformation numérique d'une entreprise", "Gérer les réseaux sociaux", "Développer des logiciels"],
+                "answer": 1
+            },
+            {
+                "text": "Parmi ces outils, lequel n'appartient PAS à Google Workspace ?",
+                "options": ["Google Docs", "Google Meet", "Trello", "Google Sheets"],
+                "answer": 2
+            },
+            {
+                "text": "HTTP est un protocole utilisé pour :",
+                "options": ["Transférer des fichiers entre serveurs", "Afficher des pages web", "Envoyer des emails", "Crypter des données"],
+                "answer": 1
+            },
+            {
+                "text": "La RAM sert principalement à :",
+                "options": ["Stocker des fichiers de manière permanente", "Exécuter des processus temporaires", "Contrôler les périphériques", "Sauvegarder des données"],
+                "answer": 1
+            },
+            {
+                "text": "Un CMS comme WordPress permet de :",
+                "options": ["Gérer le contenu d'un site web sans coder", "Analyser des données clients", "Protéger contre les virus", "Créer des animations 3D"],
+                "answer": 0
+            },
+            {
+                "text": "Le SEO vise principalement à :",
+                "options": ["Améliorer le classement d'un site dans les résultats de recherche", "Augmenter le trafic payant", "Concevoir des interfaces utilisateur", "Optimiser les performances d'un serveur"],
+                "answer": 0
+            },
+            {
+                "text": "Quelle est la différence entre Internet et le Web ?",
+                "options": ["Internet est un réseau physique, le Web est un service basé sur ce réseau", "Le Web est une version avancée d'Internet", "Internet est un navigateur, le Web est un protocole", "Aucune différence"],
+                "answer": 0
+            },
+            {
+                "text": "Un exemple de navigateur web est :",
+                "options": ["Photoshop", "Slack", "Firefox", "Excel"],
+                "answer": 2
+            },
+            {
+                "text": "Le rôle d'un développeur front-end est de :",
+                "options": ["Créer l'interface utilisateur d'un site", "Gérer les bases de données", "Analyser les performances SEO", "Écrire des scripts backend"],
+                "answer": 0
+            },
+            {
+                "text": "Un disque SSD est :",
+                "options": ["Un stockage rapide et non mécanique", "Un outil de gestion de projet", "Un protocole de sécurité", "Un type de réseau sans fil"],
+                "answer": 0
+            },
+            {
+                "text": "Parmi ces métiers, lequel est lié au digital ?",
+                "options": ["Data Scientist", "Mécanicien industriel", "Comptable", "Boulanger"],
+                "answer": 0
+            },
+            {
+                "text": "Un pare-feu (firewall) sert à :",
+                "options": ["Bloquer les accès non autorisés à un réseau", "Améliorer la vitesse d'un ordinateur", "Stocker des fichiers cloud", "Générer des mots de passe"],
+                "answer": 0
+            },
+            {
+                "text": "Le cloud computing permet :",
+                "options": ["D'accéder à des ressources informatiques à distance", "De créer des applications hors ligne", "D'améliorer la résolution d'écran", "De jouer à des jeux vidéo sans console"],
+                "answer": 0
+            },
+            {
+                "text": "Quel outil Google Workspace est utilisé pour les tableurs ?",
+                "options": ["Google Sheets", "Google Docs", "Google Slides", "Google Forms"],
+                "answer": 0
+            },
+            {
+                "text": "Un système d'exploitation comme Windows ou macOS gère :",
+                "options": ["Les interactions entre matériel et logiciels", "Les campagnes marketing", "Les stratégies SEO", "Les bases de données"],
+                "answer": 0
+            },
+            {
+                "text": "Le HTML est utilisé pour :",
+                "options": ["Structurer le contenu d'une page web", "Styliser une page web", "Gérer les interactions utilisateur", "Stocker des données"],
+                "answer": 0
+            },
+            {
+                "text": "Un VPN sert principalement à :",
+                "options": ["Sécuriser la connexion internet", "Augmenter la vitesse de téléchargement", "Contrôler la température du CPU", "Générer des rapports financiers"],
+                "answer": 0
+            },
+            {
+                "text": "Quel langage est utilisé pour styliser une page web ?",
+                "options": ["CSS", "Python", "SQL", "Java"],
+                "answer": 0
+            },
+            {
+                "text": "Un nom de domaine comme .org indique généralement :",
+                "options": ["Une organisation à but non lucratif", "Un site gouvernemental", "Un site commercial", "Un réseau social"],
+                "answer": 0
+            },
+            {
+                "text": "Le rôle d'un administrateur réseau est :",
+                "options": ["Gérer la connectivité et la sécurité des réseaux", "Créer du contenu marketing", "Développer des applications mobiles", "Analyser les données clients"],
+                "answer": 0
+            },
+            {
+                "text": "Un cookie sur le web est :",
+                "options": ["Un fichier stockant des informations utilisateur", "Un virus informatique", "Un type de pare-feu", "Un protocole de cryptage"],
+                "answer": 0
+            },
+            {
+                "text": "Le terme \"responsive design\" désigne :",
+                "options": ["Un site qui s'adapte à tous les écrans", "Un site à chargement rapide", "Un design coloré", "Une interface animée"],
+                "answer": 0
+            },
+            {
+                "text": "Un exemple de solution de stockage cloud est :",
+                "options": ["Google Drive", "Microsoft Word", "Adobe Premiere", "AutoCAD"],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "moduleName": "Méthodologies et gestion de projet",
+        "questions": [
+            {
+                "text": "La phase d'empathie dans le Design Thinking vise à :",
+                "options": ["Comprendre les besoins des utilisateurs", "Prototyper une solution", "Vendre un produit", "Analyser les coûts"],
+                "answer": 0
+            },
+            {
+                "text": "L'analyse SWOT identifie :",
+                "options": ["Forces, Faiblesses, Opportunités, Menaces", "Solutions, Workflows, Objectifs, Temps", "Stratégies, Web, Outils, Tactiques", "Aucune de ces réponses"],
+                "answer": 0
+            },
+            {
+                "text": "Un objectif SMART doit être :",
+                "options": ["Spécifique, Mesurable, Atteignable, Réaliste, Temporel", "Simple, Moderne, Agile, Rapide, Technologique", "Spontané, Méticuleux, Ambitieux, Réfléchi, Tactique", "Aucune de ces réponses"],
+                "answer": 0
+            },
+            {
+                "text": "Le Lean Startup privilégie :",
+                "options": ["Des itérations rapides basées sur les retours utilisateurs", "Un plan détaillé sur 5 ans", "Un budget marketing élevé", "Un produit parfait dès le lancement"],
+                "answer": 0
+            },
+            {
+                "text": "La matrice d'Eisenhower classe les tâches selon :",
+                "options": ["Urgence et importance", "Coût et complexité", "Popularité et tendances", "Ressources et temps"],
+                "answer": 0
+            },
+            {
+                "text": "Un persona est utilisé pour :",
+                "options": ["Représenter un utilisateur type cible", "Gérer les tâches d'une équipe", "Analyser les données financières", "Concevoir des logos"],
+                "answer": 0
+            },
+            {
+                "text": "Le benchmarking consiste à :",
+                "options": ["Comparer ses performances à celles des concurrents", "Prototyper une interface utilisateur", "Auditer un site web", "Gérer une communauté en ligne"],
+                "answer": 0
+            },
+            {
+                "text": "Le Lean Canvas se concentre sur :",
+                "options": ["Problèmes, solutions, avantages concurrentiels", "Design graphique", "Publicité en ligne", "Gestion des stocks"],
+                "answer": 0
+            },
+            {
+                "text": "Un sprint en Scrum dure généralement :",
+                "options": ["2 à 4 semaines", "6 mois", "1 jour", "1 heure"],
+                "answer": 0
+            },
+            {
+                "text": "L'analyse PESTEL évalue les facteurs :",
+                "options": ["Politiques, Économiques, Sociaux, Technologiques, Environnementaux, Légaux", "Produits, Entreprises, Stratégies, Tactiques, Équipes, Leadership", "Prix, Emballage, Stockage, Transport, Export, Logistique", "Aucune de ces réponses"],
+                "answer": 0
+            },
+            {
+                "text": "La carte d'empathie sert à :",
+                "options": ["Visualiser les besoins et motivations des utilisateurs", "Planifier un budget", "Analyser les performances SEO", "Créer des maquettes"],
+                "answer": 0
+            },
+            {
+                "text": "Le Lean Management vise à :",
+                "options": ["Éliminer les gaspillages", "Augmenter la production à tout prix", "Centraliser les décisions", "Réduire les interactions clients"],
+                "answer": 0
+            },
+            {
+                "text": "Un Product Manager est responsable de :",
+                "options": ["La vision et le succès d'un produit", "La comptabilité d'entreprise", "La gestion des réseaux sociaux", "L'entretien des locaux"],
+                "answer": 0
+            },
+            {
+                "text": "L'étude de marché permet de :",
+                "options": ["Comprendre les besoins des clients et la concurrence", "Développer un prototype technique", "Créer une charte graphique", "Optimiser les serveurs cloud"],
+                "answer": 0
+            },
+            {
+                "text": "La méthode agile favorise :",
+                "options": ["La flexibilité et l'adaptation aux changements", "Une documentation exhaustive", "Des cycles de développement longs", "Un contrôle hiérarchique strict"],
+                "answer": 0
+            },
+            {
+                "text": "Le rôle d'un Scrum Master est :",
+                "options": ["Faciliter les processus agiles et supprimer les obstacles", "Gérer les comptes clients", "Concevoir des interfaces utilisateur", "Analyser les données SEO"],
+                "answer": 0
+            },
+            {
+                "text": "La valeur principale du Lean Startup est :",
+                "options": ["Apprendre rapidement grâce aux feedbacks", "Maximiser les profits dès le lancement", "Ignorer les attentes des clients", "Investir dans la publicité"],
+                "answer": 0
+            },
+            {
+                "text": "Un objectif SMART doit inclure :",
+                "options": ["Un délai précis", "Un budget illimité", "Des résultats flous", "Aucune métrique"],
+                "answer": 0
+            },
+            {
+                "text": "L'analyse PESTEL est utile pour :",
+                "options": ["Évaluer l'environnement macro-économique", "Concevoir des logos", "Optimiser les campagnes Google Ads", "Gérer les ressources humaines"],
+                "answer": 0
+            },
+            {
+                "text": "La matrice d'Eisenhower catégorise une tâche urgente et importante comme :",
+                "options": ["À faire en priorité", "À déléguer", "À planifier", "À éviter"],
+                "answer": 0
+            },
+            {
+                "text": "Le MVP (Minimum Viable Product) vise à :",
+                "options": ["Tester une idée avec un produit minimal", "Lancer un produit parfait", "Maximiser les fonctionnalités", "Ignorer les retours utilisateurs"],
+                "answer": 0
+            },
+            {
+                "text": "Un rétroplanning est utilisé pour :",
+                "options": ["Planifier les étapes d'un projet à partir de la date de fin", "Analyser les coûts", "Créer des personas", "Gérer les réseaux sociaux"],
+                "answer": 0
+            },
+            {
+                "text": "Le diagramme de Gantt illustre :",
+                "options": ["L'avancement des tâches dans le temps", "Les flux utilisateur", "Les résultats financiers", "Les interactions sociales"],
+                "answer": 0
+            },
+            {
+                "text": "Un risque identifié dans un projet doit être :",
+                "options": ["Analysé et mitigé", "Ignoré", "Externalisé", "Financé"],
+                "answer": 0
+            },
+            {
+                "text": "La méthode Kanban utilise :",
+                "options": ["Des tableaux visuels pour gérer les tâches", "Des sprints de 2 semaines", "Une documentation rigide", "Des budgets détaillés"],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "moduleName": "Design et gestion de produit",
+        "questions": [
+            {
+                "text": "Un wireframe est :",
+                "options": ["Une maquette simplifiée d'interface", "Un diagramme de flux", "Une charte graphique", "Un document marketing"],
+                "answer": 0
+            },
+            {
+                "text": "Figma est principalement utilisé pour :",
+                "options": ["Concevoir des interfaces et prototyper", "Analyser des données", "Gérer des projets", "Héberger des sites web"],
+                "answer": 0
+            },
+            {
+                "text": "La roadmap produit décrit :",
+                "options": ["Les étapes futures d'un produit", "Les coûts de production", "La stratégie social media", "Les besoins utilisateurs"],
+                "answer": 0
+            },
+            {
+                "text": "L'UX Design se concentre sur :",
+                "options": ["L'expérience utilisateur", "L'optimisation du code", "La publicité en ligne", "La gestion des stocks"],
+                "answer": 0
+            },
+            {
+                "text": "Un cahier des charges fonctionnel inclut :",
+                "options": ["Les spécifications techniques et fonctionnelles", "La palette de couleurs", "Le budget marketing", "Les contrats clients"],
+                "answer": 0
+            },
+            {
+                "text": "Le Product Vision Canvas aide à :",
+                "options": ["Définir la vision stratégique d'un produit", "Analyser les concurrents", "Créer des publicités", "Gérer les réseaux sociaux"],
+                "answer": 0
+            },
+            {
+                "text": "Un user flow représente :",
+                "options": ["Le parcours type d'un utilisateur", "L'architecture technique", "La stratégie de contenu", "Les coûts de développement"],
+                "answer": 0
+            },
+            {
+                "text": "La charte graphique définit :",
+                "options": ["L'identité visuelle (couleurs, typographie, logo)", "Les fonctionnalités d'un produit", "Les objectifs SMART", "Les tâches quotidiennes"],
+                "answer": 0
+            },
+            {
+                "text": "Le prompt engineering est utilisé pour :",
+                "options": ["Optimiser les requêtes envoyées à une IA", "Gérer les projets agiles", "Concevoir des logos", "Analyser les données clients"],
+                "answer": 0
+            },
+            {
+                "text": "La vision produit doit être :",
+                "options": ["Inspirante et claire", "Technique et détaillée", "Confidentielle", "Générique"],
+                "answer": 0
+            },
+            {
+                "text": "Un prototype clickable est souvent créé avec :",
+                "options": ["Figma ou Adobe XD", "Excel", "Google Analytics", "Trello"],
+                "answer": 0
+            },
+            {
+                "text": "L'UI Design se focalise sur :",
+                "options": ["L'aspect visuel et l'ergonomie d'une interface", "La vitesse d'un site web", "La stratégie marketing", "La gestion des données"],
+                "answer": 0
+            },
+            {
+                "text": "Un user flow (parcours utilisateur) décrit :",
+                "options": ["Une situation d'utilisation typique du produit", "Les étapes de développement", "La roadmap produit", "Les coûts de production"],
+                "answer": 0
+            },
+            {
+                "text": "Le Lean Canvas est une version simplifiée de :",
+                "options": ["Business Model Canvas", "Carte d'empathie", "Diagramme de Gantt", "SWOT"],
+                "answer": 0
+            },
+            {
+                "text": "Un test utilisateur (user testing) vise à :",
+                "options": ["Identifier les problèmes d'utilisation d'un produit", "Valider des hypothèses marketing", "Mesurer la vitesse d'un site web", "Analyser les données financières"],
+                "answer": 0
+            },
+            {
+                "text": "Dans le MVP (Minimum Viable Product), l'accent est mis sur :",
+                "options": ["Les fonctionnalités essentielles", "Le design parfait", "Le budget marketing", "La documentation technique"],
+                "answer": 0
+            },
+            {
+                "text": "La \"roadmap produit\" inclut généralement :",
+                "options": ["Objectifs, fonctionnalités, calendrier", "Analyse des concurrents", "Stratégie de publicité", "Palette de couleurs"],
+                "answer": 0
+            },
+            {
+                "text": "L'UI Design se distingue de l'UX Design par son focus sur :",
+                "options": ["L'aspect visuel et l'interactivité", "La recherche utilisateur", "La stratégie de contenu", "L'analyse des données"],
+                "answer": 0
+            },
+            {
+                "text": "Une carte d'empathie contient des sections comme :",
+                "options": ["\"Ce que l'utilisateur pense\", \"Ce qu'il ressent\"", "\"Coûts\", \"Revenus\"", "\"Fonctionnalités\", \"Technologies\"", "\"Publicité\", \"SEO\""],
+                "answer": 0
+            },
+            {
+                "text": "Un wireframe haute fidélité inclut :",
+                "options": ["Des détails visuels (couleurs, typographie)", "Des annotations techniques", "Des données utilisateur", "Des analyses de marché"],
+                "answer": 0
+            },
+            {
+                "text": "Dans Figma, un \"frame\" est utilisé pour :",
+                "options": ["Définir une zone de travail (écran, composant)", "Analyser les performances", "Gérer les tâches d'équipe", "Créer des animations"],
+                "answer": 0
+            },
+            {
+                "text": "La \"vision produit\" doit être alignée avec :",
+                "options": ["La stratégie globale de l'entreprise", "Les tendances graphiques", "Les budgets publicitaires", "Les outils de développement"],
+                "answer": 0
+            },
+            {
+                "text": "Le Product Vision Canvas aide à clarifier :",
+                "options": ["Les utilisateurs cibles et les besoins clés", "Les coûts de production", "Les campagnes social media", "Les algorithmes d'IA"],
+                "answer": 0
+            },
+            {
+                "text": "Un \"user flow\" est souvent représenté sous forme de :",
+                "options": ["Diagramme de flux", "Tableur Excel", "Graphique en camembert", "Carte mentale"],
+                "answer": 0
+            },
+            {
+                "text": "Le terme \"responsive design\" est crucial pour :",
+                "options": ["Assurer l'adaptabilité sur mobiles, tablettes et desktop", "Optimiser le référencement", "Augmenter la vitesse de chargement", "Générer du trafic payant"],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "moduleName": "Marketing et stratégie digitale",
+        "questions": [
+            {
+                "text": "Le growth hacking combine :",
+                "options": ["Créativité, analyse et rapidité", "Budgets élevés et publicité TV", "Documentation rigide et planification", "Design graphique et codage"],
+                "answer": 0
+            },
+            {
+                "text": "Le storytelling efficace repose sur :",
+                "options": ["Une structure narrative claire (début, conflit, résolution)", "Des données statistiques complexes", "Des graphiques techniques", "Des acronymes professionnels"],
+                "answer": 0
+            },
+            {
+                "text": "Une stratégie \"go-to-market\" inclut :",
+                "options": ["Segmentation client, canaux de distribution, plan de lancement", "Design d'interface, wireframes, prototypes", "Code source, tests techniques, déploiement", "Analyse SWOT, PESTEL, Lean Canvas"],
+                "answer": 0
+            },
+            {
+                "text": "Un audit social media analyse principalement :",
+                "options": ["Performance des posts, engagement, cohérence de la marque", "Code HTML/CSS des pages", "Données financières de l'entreprise", "Design des logos"],
+                "answer": 0
+            },
+            {
+                "text": "L'inbound marketing attire les clients via :",
+                "options": ["Contenu utile (blogs, eBooks, webinaires)", "Publicités intrusives (pop-ups, spams)", "Appels téléphoniques aléatoires", "Campagnes print coûteuses"],
+                "answer": 0
+            },
+            {
+                "text": "La \"ligne éditoriale\" définit :",
+                "options": ["Ton, style, fréquence et sujets de publication", "Palette de couleurs et typographie", "Fonctionnalités techniques d'un site", "Budgets publicitaires mensuels"],
+                "answer": 0
+            },
+            {
+                "text": "Le copywriting efficace vise à :",
+                "options": ["Persuader et inciter à l'action", "Rédiger des rapports techniques", "Analyser des données SEO", "Gérer des bases de données"],
+                "answer": 0
+            },
+            {
+                "text": "Un community manager interagit principalement sur :",
+                "options": ["Réseaux sociaux (Facebook, Instagram, Twitter)", "Plateformes de développement (GitHub)", "Outils de design (Figma, Adobe XD)", "Logiciels comptables"],
+                "answer": 0
+            },
+            {
+                "text": "L'image de marque (branding) inclut :",
+                "options": ["Logo, slogan, valeurs, expérience client", "Prix des produits", "Nombre d'employés", "Localisation des bureaux"],
+                "answer": 0
+            },
+            {
+                "text": "Le marketing de contenu vise à :",
+                "options": ["Éduquer et engager le public via du contenu utile", "Vendre directement des produits", "Crypter des données", "Optimiser les serveurs"],
+                "answer": 0
+            },
+            {
+                "text": "La \"matrice Eisenhower\" classe une tâche non urgente mais importante comme :",
+                "options": ["À planifier", "À faire immédiatement", "À déléguer", "À supprimer"],
+                "answer": 0
+            },
+            {
+                "text": "Un KPI (Key Performance Indicator) en social media pourrait être :",
+                "options": ["Taux d'engagement (likes, partages)", "Nombre d'employés", "Taille des locaux", "Vitesse du réseau interne"],
+                "answer": 0
+            },
+            {
+                "text": "Le SEO et le SEA diffèrent car :",
+                "options": ["Le SEO est gratuit, le SEA est payant", "Le SEA concerne l'expérience utilisateur", "Le SEO utilise des publicités display", "Le SEA est un outil de design"],
+                "answer": 0
+            },
+            {
+                "text": "Un hashtag est utilisé sur les réseaux sociaux pour :",
+                "options": ["Catégoriser le contenu et augmenter la visibilité", "Crypter des messages", "Analyser les données financières", "Gérer les stocks"],
+                "answer": 0
+            },
+            {
+                "text": "Le \"A/B testing\" permet de :",
+                "options": ["Comparer deux versions d'une page web", "Analyser des tendances économiques", "Concevoir des logos", "Optimiser les serveurs"],
+                "answer": 0
+            },
+            {
+                "text": "Un funnel de conversion représente :",
+                "options": ["Le parcours client (de la découverte à l'achat)", "La structure technique d'un site", "La stratégie de recrutement", "Les coûts de production"],
+                "answer": 0
+            },
+            {
+                "text": "L'\"UGC\" (User-Generated Content) désigne :",
+                "options": ["Contenu créé par les utilisateurs (avis, photos)", "Contenu généré par des IA", "Publicités sponsorisées", "Rapports annuels d'entreprise"],
+                "answer": 0
+            },
+            {
+                "text": "Un influenceur digital est principalement utile pour :",
+                "options": ["Augmenter la crédibilité et la portée d'une marque", "Développer des logiciels", "Gérer les ressources humaines", "Auditer les comptes"],
+                "answer": 0
+            },
+            {
+                "text": "Le \"CTA\" (Call To Action) idéal est :",
+                "options": ["Clair et incitatif (\"Inscrivez-vous maintenant !\")", "Long et détaillé", "Technique et complexe", "Générique et vague"],
+                "answer": 0
+            },
+            {
+                "text": "L'e-mail marketing efficace nécessite :",
+                "options": ["Une liste ciblée, un sujet percutant, un contenu pertinent", "Des graphiques 3D complexes", "Des liens cryptés", "Un budget illimité"],
+                "answer": 0
+            },
+            {
+                "text": "Le \"reach\" sur les réseaux sociaux mesure :",
+                "options": ["Le nombre de personnes ayant vu un contenu", "Le taux de conversion", "Le coût par clic", "La vitesse de chargement"],
+                "answer": 0
+            },
+            {
+                "text": "Un bon titre d'article SEO doit :",
+                "options": ["Inclure des mots-clés et être attractif", "Être très technique", "Éviter les verbes d'action", "Contenir des acronymes complexes"],
+                "answer": 0
+            },
+            {
+                "text": "Le \"remarketing\" cible :",
+                "options": ["Les utilisateurs ayant déjà interagi avec un site", "Les nouveaux clients exclusivement", "Les employés de l'entreprise", "Les concurrents directs"],
+                "answer": 0
+            },
+            {
+                "text": "La \"stratégie social media\" inclut :",
+                "options": ["Choix des plateformes, calendrier éditorial, KPI", "Développement d'applications mobiles", "Gestion des stocks", "Analyse de code source"],
+                "answer": 0
+            },
+            {
+                "text": "L'\"inbound marketing\" se distingue de l'\"outbound marketing\" par :",
+                "options": ["Une approche non intrusive (le client vient à vous)", "L'utilisation de publicités TV/radio", "L'envoi massif d'e-mails non sollicités", "La gestion des réseaux internes"],
+                "answer": 0
+            }
+        ]
+    }
+]
