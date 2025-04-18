@@ -290,7 +290,7 @@ body{
     border-radius: 8px; /* Bordure arrondie de timer */
     color: #85640a; /* Couleur du texte de timer */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre de timer */
-    display: inline-block; /* Pour que le padding et border-radius fonctionnent correctement */
+    /*display: inline-block;  Pour que le padding et border-radius fonctionnent correctement */
     margin-top: 20px; /* Ajoute de l'espace au-dessus du titre Modules */
     margin-bottom: -10px; /* Ajoute de l'espace en dessous du titre Modules */
 }
@@ -372,7 +372,7 @@ body{
 
     .sidebar.open {
         left: 0; 
-        padding-top: 41px;/* Afficher la sidebar quand la classe .open est ajoutée */
+        padding-top: 60px;/* Afficher la sidebar quand la classe .open est ajoutée */
     }
 
     .hamburger-btn {
