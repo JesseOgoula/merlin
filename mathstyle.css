@@ -19,17 +19,23 @@ body{
 
 .container1 {
     display: flex;
-    width: 1200px;
+    /* width: 1200px; */ /* Remplacé par max-width et width */
+    max-width: 1200px; /* Largeur maximale */
+    width: 95%; /* Largeur relative pour s'adapter */
+    margin: 20px auto; /* Centrer le conteneur et ajouter une marge */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: hidden; /* Garder overflow: hidden ou le gérer dans les media queries si besoin */
 }
 .sidebar, .progress-sidebar {
-    width: 200px;
+    /* width: 200px; */ /* Largeur fixe supprimée, gérée par flex ou media queries */
+    flex: 0 0 200px; /* Base de 200px, ne grandit pas, ne rétrécit pas */
     padding: 20px;
     background: #05203A;
     color: white;
+    /* Ajout pour le défilement si le contenu dépasse sur petits écrans */
+    overflow-y: auto;
 }
 
 #time{
@@ -301,4 +307,165 @@ body{
     color: #85640a;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     display: inline-block;
+}
+
+/* --- Styles pour le bouton Hamburger --- */
+.hamburger-btn {
+    display: none; /* Caché par défaut sur grand écran */
+    position: absolute; /* Positionnement pour le placer */
+    top: 15px;
+    left: 15px;
+    z-index: 1001; /* Au-dessus de la sidebar quand elle est cachée */
+    background: #f39c12;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #05203A;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* --- Media Queries pour la responsivité --- */
+
+/* Pour les tablettes et petits écrans (ex: moins de 992px) */
+@media (max-width: 991.98px) {
+    .container1 {
+        width: 95%; /* Ajuster la largeur pour les tablettes */
+        flex-direction: column; /* Empiler les éléments verticalement */
+    }
+
+    /* Styles pour .sidebar sont gérés plus bas avec position:fixed */
+    .progress-sidebar {
+        /* flex: 1 1 auto; */ /* Supprimé car non pertinent en colonne */
+        width: 100%; /* Prendre toute la largeur en mode colonne */
+        max-height: 300px; /* Limiter la hauteur et permettre le défilement */
+        overflow-y: auto;
+    }
+
+    .main-content {
+        order: 1; /* Mettre le contenu principal avant la sidebar de progression */
+        width: 100%; /* S'assurer qu'il prend toute la largeur */
+        padding-top: 60px; /* Ajouter de l'espace pour le bouton hamburger */
+    }
+
+     .sidebar {
+        order: 0; /* Garder la sidebar des modules en premier */
+        position: fixed; /* Position fixe pour la faire glisser */
+        left: -100%; /* Cachée hors de l'écran par défaut */
+        top: 0;
+        height: 100%;
+        /* width: 250px; */ /* Remplacé par une largeur relative */
+        width: 80vw; /* Occupe 80% de la largeur de l'écran */
+        max-width: 300px; /* Limite maximale pour ne pas être trop large sur tablette verticale */
+        transition: left 0.3s ease; /* Animation de glissement */
+        z-index: 1000; /* Au-dessus du contenu principal */
+        max-height: none; /* Enlever la limite de hauteur en mode menu */
+        overflow-y: auto; /* Garder le défilement */
+    }
+
+    .sidebar.open {
+        left: 0; /* Afficher la sidebar quand la classe .open est ajoutée */
+    }
+
+    .hamburger-btn {
+        display: block; /* Afficher le bouton hamburger sur petits écrans */
+    }
+
+    .progress-sidebar {
+        order: 2; /* Mettre la sidebar de progression en dernier */
+    }
+
+    #webcam-container {
+        display: none; /* Masquer la webcam sur tablette et mobile */
+    }
+    #webcam-video {
+        max-height: 150px; /* Réduire la hauteur de la webcam (règle conservée au cas où on la réaffiche) */
+    }
+}
+
+/* Pour les téléphones mobiles (ex: moins de 768px) */
+@media (max-width: 767.98px) {
+    body {
+        height: auto; /* Permettre au body de grandir avec le contenu */
+        padding-bottom: 60px; /* Ajouter de l'espace pour le footer fixe potentiel */
+    }
+    .container1 {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        min-height: 100vh; /* Assurer que le conteneur prend au moins la hauteur de l'écran */
+        position: relative; /* Nécessaire pour le positionnement absolu du bouton hamburger */
+    }
+
+    /* La sidebar est déjà gérée par la media query précédente */
+    .progress-sidebar { /* S'assurer que la sidebar de progression prend toute la largeur */
+       max-height: 250px; /* Ajuster la hauteur max */
+    }
+
+    .main-content {
+        padding: 15px; /* Réduire le padding */
+    }
+
+    #question-container {
+        padding: 15px;
+        max-width: 95%; /* Limiter la largeur pour ne pas toucher les bords */
+        margin: 20px auto; /* Centrer horizontalement et ajouter marge verticale */
+    }
+
+    #time {
+        font-size: 24px; /* Réduire la taille de la police du timer */
+    }
+
+    #infractions {
+        font-size: 18px; /* Réduire la taille de la police des infractions */
+        padding: 6px 15px;
+    }
+
+    #user-greeting, .sidebar h2, .main-content h2 {
+        font-size: 1em; /* Ajuster la taille des titres */
+        padding: 6px 10px;
+    }
+
+    #next-btn, #submit-btn, #send-email-btn, #restart-btn, #start-quiz-btn {
+        padding: 8px 15px; /* Ajuster le padding des boutons */
+        font-size: 0.9em;
+    }
+
+    /* Ajustements spécifiques pour le popup sur mobile si nécessaire */
+    .popup-content {
+        width: 90%;
+        margin: 10% auto;
+        padding: 15px;
+    }
+     .close-button {
+        top: 5px;
+        right: 10px;
+        font-size: 24px;
+    }
+}
+
+/* Pour les très petits écrans (ex: moins de 576px) */
+@media (max-width: 575.98px) {
+     .sidebar, .progress-sidebar {
+       max-height: 200px; /* Réduire encore la hauteur max */
+       padding: 15px;
+    }
+     .main-content {
+        padding: 10px;
+    }
+     #options-container label {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+     #classe {
+        font-size: 30px; /* Réduire la taille de la police pour #classe */
+    }
 }

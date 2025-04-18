@@ -1,16 +1,3 @@
-function redirigerQuiz(event) {
-    event.preventDefault(); // Empêche l'envoi du formulaire
-  
-    const specialite = document.getElementById("specialite").value; // Récupère la spécialité choisie
-  
-    if (specialite === "Gestion") {
-      window.location.href = "quiz-gestion-projet.html"; // Redirection vers le quiz de mathématiques
-    } else if (specialite === "Marketing") {
-      window.location.href = "quiz-marketing-digital.html"; // Redirection vers le quiz de physique
-    }
-  }
-
-  
 // partie gestion de la page de quiz
 const quizData = {
     "gestion de projet": [
@@ -1386,30 +1373,71 @@ function updateInfractions() {
 }
 
 window.onload = () => {
-    // Récupérer la spécialité depuis localStorage
-    specialiteQuiz = localStorage.getItem('specialite').toLowerCase();
-    // console.log('specialiteQuiz:', specialiteQuiz); // AJOUTER CE LOG
+    // --- Logique spécifique aux pages de Quiz ---
+    const quizContainer = document.querySelector('.container1'); // Élément présent uniquement sur les pages de quiz
+    console.log("window.onload: Vérification de quizContainer:", quizContainer); // LOG
 
-    // Charger les modules dans la sidebar
-    loadModulesSidebar();
-
-    const popup = document.getElementById('instructions-popup');
-    console.log('popup element:', popup); // AJOUTER CE LOG
-    console.log('instructionsShown in sessionStorage:', sessionStorage.getItem('instructionsShown')); // AJOUTER CE LOG
-
-    // Afficher le pop-up d'instructions si c'est la première visite
-    if (!sessionStorage.getItem('instructionsShown')) {
-        if (popup) { // Vérifier si l'élément popup existe
-            popup.style.display = 'flex';
-        } else {
-            console.error('instructions-popup element not found!'); // AJOUTER CE LOG
+    if (quizContainer) {
+        console.log("window.onload: Page de quiz détectée."); // LOG
+        // Récupérer la spécialité depuis localStorage
+        let storedSpecialite = null;
+        try {
+            storedSpecialite = localStorage.getItem('specialite');
+            console.log("window.onload: Spécialité récupérée de localStorage:", storedSpecialite); // LOG
+        } catch (e) {
+            console.error("Erreur lors de l'accès à localStorage:", e); // LOG ERREUR
+            // Afficher un message à l'utilisateur ?
+            alert("Erreur d'accès au stockage local. Le quiz ne peut pas démarrer.");
+            return;
         }
-    } else {
-        loadQuestion(); // Charger directement la question si les instructions ont déjà été vues
-    }
 
-    setInterval(() => {
-        let timer = document.getElementById("time").textContent.split(":"),
+        if (!storedSpecialite) {
+            console.error("Spécialité non trouvée dans localStorage. Impossible de démarrer le quiz.");
+            alert("Erreur: Spécialité non définie. Veuillez retourner à l'accueil.");
+            // Optionnel : rediriger vers index.html si la spécialité manque
+            // window.location.href = 'index.html';
+            return; // Arrêter l'exécution si la spécialité manque
+        }
+        specialiteQuiz = storedSpecialite.toLowerCase();
+        console.log("window.onload: specialiteQuiz définie:", specialiteQuiz); // LOG
+
+        // Charger les modules dans la sidebar
+        loadModulesSidebar(); // Cette fonction contient déjà des logs
+
+        const popup = document.getElementById('instructions-popup');
+        console.log('window.onload: popup element:', popup); // LOG
+
+        let instructionsShown = false;
+        try {
+            instructionsShown = sessionStorage.getItem('instructionsShown');
+            console.log('window.onload: instructionsShown récupéré de sessionStorage:', instructionsShown); // LOG
+        } catch (e) {
+            console.error("Erreur lors de l'accès à sessionStorage:", e); // LOG ERREUR
+            // Continuer sans popup peut être problématique, mais on essaie
+            alert("Erreur d'accès au stockage de session. Le popup d'instructions pourrait ne pas fonctionner correctement.");
+        }
+
+
+        // Afficher le pop-up d'instructions si c'est la première visite
+        if (!instructionsShown) {
+             console.log("window.onload: Affichage du popup d'instructions."); // LOG
+            if (popup) { // Vérifier si l'élément popup existe
+                popup.style.display = 'flex';
+            } else {
+                console.error('instructions-popup element not found!');
+            }
+        } else {
+            console.log("window.onload: Instructions déjà vues, chargement direct de la question."); // LOG
+            loadQuestion(); // Charger directement la question si les instructions ont déjà été vues
+        }
+
+        // Timer
+        setInterval(() => {
+            // Vérifier si l'élément time existe avant de manipuler
+            const timeElement = document.getElementById("time");
+            if (!timeElement || !timeElement.textContent) return;
+
+            let timer = timeElement.textContent.split(":"),
             hours = parseInt(timer[0]),
             minutes = parseInt(timer[1]),
             seconds = parseInt(timer[2]);
@@ -1420,10 +1448,103 @@ window.onload = () => {
     }, 1000);
 
     // Initialiser la webcam
-    initWebcam();
+        initWebcam();
+
+        // Attacher les écouteurs pour next/submit SEULEMENT si les boutons existent
+        const nextBtn = document.getElementById("next-btn");
+        const submitBtn = document.getElementById("submit-btn");
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", selectAnswer);
+        }
+        if (submitBtn) {
+            submitBtn.addEventListener("click", function() {
+                selectAnswer(); // Appelle la même fonction que next
+            });
+        }
+
+        // Gestionnaire d'événement pour le bouton Hamburger (déplacé ici pour être conditionné)
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const sidebar = document.querySelector('.sidebar'); // Sélectionne la sidebar des modules
+
+        if (hamburgerBtn && sidebar) {
+            hamburgerBtn.addEventListener('click', function() {
+                sidebar.classList.toggle('open'); // Ajoute ou retire la classe 'open'
+            });
+
+            // Optionnel : Fermer la sidebar si on clique en dehors (sur le main content par exemple)
+            const mainContent = document.querySelector('.main-content');
+            if (mainContent) {
+                mainContent.addEventListener('click', function() {
+                    if (sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                    }
+                });
+            }
+             // Optionnel : Fermer la sidebar si on clique sur un module
+            sidebar.addEventListener('click', function(event) {
+                // Vérifier si l'élément cliqué est un LI et si la sidebar est ouverte
+                if (event.target.tagName === 'LI' && sidebar.classList.contains('open')) {
+                     // Appeler changeModule SEULEMENT si on clique sur un module différent de l'actuel
+                    const clickedModuleIndex = parseInt(event.target.getAttribute('data-module-index'));
+                    if (clickedModuleIndex !== currentModuleIndex) {
+                         changeModule(clickedModuleIndex); // Charger le nouveau module
+                    }
+                    sidebar.classList.remove('open'); // Fermer la sidebar dans tous les cas de clic sur LI
+                }
+            });
+        }
+
+         // Gestionnaire d'événement pour le bouton "Commencer le Quiz" dans le pop-up (conditionné)
+        const startQuizBtn = document.getElementById('start-quiz-btn');
+        const closePopupBtn = document.getElementById('close-popup');
+        // const popup = document.getElementById('instructions-popup'); // Déjà récupéré plus haut
+
+        console.log("window.onload: Vérification boutons popup:", startQuizBtn, closePopupBtn, popup); // LOG
+
+        if (startQuizBtn && popup) {
+            startQuizBtn.addEventListener('click', function() {
+                console.log("Bouton 'Commencer le Quiz' cliqué."); // LOG
+                popup.style.display = 'none'; // Cacher le pop-up
+                try {
+                    sessionStorage.setItem('instructionsShown', 'true'); // Marquer les instructions comme vues
+                    console.log("sessionStorage 'instructionsShown' mis à true."); // LOG
+                } catch (e) {
+                     console.error("Erreur lors de l'écriture dans sessionStorage:", e); // LOG ERREUR
+                     alert("Erreur lors de la sauvegarde de l'état des instructions.");
+                }
+                loadQuestion(); // Charger la première question
+            });
+        }
+        if (closePopupBtn && popup) {
+             closePopupBtn.addEventListener('click', function() {
+                console.log("Bouton 'Fermer Popup' cliqué."); // LOG
+                popup.style.display = 'none'; // Cacher le pop-up
+                 try {
+                    sessionStorage.setItem('instructionsShown', 'true'); // Marquer les instructions comme vues
+                    console.log("sessionStorage 'instructionsShown' mis à true."); // LOG
+                } catch (e) {
+                     console.error("Erreur lors de l'écriture dans sessionStorage:", e); // LOG ERREUR
+                     alert("Erreur lors de la sauvegarde de l'état des instructions.");
+                }
+                loadQuestion(); // Charger la première question même si l'utilisateur ferme sans cliquer sur "Commencer"
+            });
+        }
+
+
+    } // Fin de la condition if (quizContainer)
+
+    // --- Logique commune ou spécifique à d'autres pages (si nécessaire) ---
+    // Par exemple, la redirection depuis index.html est gérée directement dans index.html
+    // La logique pour resultats.js est dans son propre fichier.
 };
 
+
 function initWebcam() {
+     // Vérifier si le conteneur webcam existe avant de continuer
+    const webcamContainer = document.getElementById('webcam-container');
+    if (!webcamContainer) return; // Sortir si pas sur une page de quiz
+
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(function (stream) {
             const video = document.getElementById('webcam-video');
@@ -1499,50 +1620,102 @@ function changeModule(moduleIndex) {
 }
 
 function loadQuestion() {
+    console.log("loadQuestion: Début du chargement de la question."); // LOG
+    // Vérifier si specialiteQuiz est défini et si quizData[specialiteQuiz] existe
+    if (!specialiteQuiz || !quizData[specialiteQuiz]) {
+        console.error("loadQuestion: Spécialité non définie ou données de quiz manquantes pour", specialiteQuiz); // LOG ERREUR
+        // Afficher un message d'erreur à l'utilisateur ?
+        const qt = document.getElementById("question-text");
+        const oc = document.getElementById("options-container");
+        if(qt) qt.textContent = "Erreur: Impossible de charger les données du quiz.";
+        if(oc) oc.innerHTML = "";
+        alert("Erreur critique: Données du quiz introuvables.");
+        return;
+    }
+     // Vérifier si le module courant existe
+    if (!quizData[specialiteQuiz][currentModuleIndex]) {
+        console.error("loadQuestion: Index de module invalide:", currentModuleIndex, "pour la spécialité", specialiteQuiz); // LOG ERREUR
+         // Gérer la fin du quiz ou une erreur
+        handleQuizEndOrError("Erreur: Module de quiz non trouvé.");
+        return;
+    }
+
     const currentModuleQuestions = getCurrentModuleQuestions();
+     console.log("loadQuestion: Module actuel:", currentModuleIndex, "Nombre de questions:", currentModuleQuestions.length); // LOG
+
     if (currentQuestionIndex < currentModuleQuestions.length) {
         const question = currentModuleQuestions[currentQuestionIndex];
-        document.getElementById("question-text").textContent = question.text;
-        const optionsContainer = document.getElementById("options-container");
-        optionsContainer.innerHTML = "";
+         console.log("loadQuestion: Chargement question index", currentQuestionIndex, ":", question.text); // LOG
+
+        // Vérifier l'existence des éléments avant de les manipuler
+        const questionTextElement = document.getElementById("question-text");
+        const optionsContainerElement = document.getElementById("options-container");
+        const progressTextElement = document.getElementById("progress-text");
+        const moduleNameElement = document.getElementById('module-name');
+
+        if (!questionTextElement || !optionsContainerElement || !progressTextElement || !moduleNameElement) {
+            console.error("loadQuestion: Un ou plusieurs éléments HTML requis sont manquants."); // LOG ERREUR
+            alert("Erreur d'interface: Impossible d'afficher la question.");
+            return; // Arrêter si des éléments manquent
+        }
+
+
+        questionTextElement.textContent = question.text;
+        optionsContainerElement.innerHTML = "";
 
         // Mélanger l'ordre des options de réponse
         const shuffledOptions = [...question.options]; // Créer une copie pour ne pas modifier l'original
-        shuffleArray(shuffledOptions); // Mélanger la copie
+        try {
+            shuffleArray(shuffledOptions); // Mélanger la copie
+        } catch (e) {
+            console.error("loadQuestion: Erreur lors du mélange des options:", e); // LOG ERREUR
+            // Continuer avec les options non mélangées ? C'est ok ici.
+        }
+
 
         shuffledOptions.forEach((option, index) => {
             const label = document.createElement("label");
-            label.innerHTML = `<input type="radio" name="qcm" value="${index}"> ${option}`;
+            // Trouver l'index original de l'option pour la valeur du radio button
+            const originalOptionIndex = question.options.indexOf(option);
+            label.innerHTML = `<input type="radio" name="qcm" value="${originalOptionIndex}"> ${option}`; // Utiliser l'index original comme valeur
             label.classList.add("option");
-            optionsContainer.appendChild(label);
+            optionsContainerElement.appendChild(label);
         });
         // Mettre à jour le texte de progression pour refléter le nombre de questions dans le module courant
-        document.getElementById("progress-text").textContent = `${currentQuestionIndex + 1}/${currentModuleQuestions.length} Questions`;
-        document.getElementById('module-name').textContent = quizData[specialiteQuiz][currentModuleIndex].moduleName;
+        progressTextElement.textContent = `${currentQuestionIndex + 1}/${currentModuleQuestions.length} Questions`;
+        moduleNameElement.textContent = quizData[specialiteQuiz][currentModuleIndex].moduleName;
+        console.log("loadQuestion: Question affichée avec succès."); // LOG
+
+         // Gérer l'affichage des boutons next/submit
+        const nextBtn = document.getElementById("next-btn");
+        const submitBtn = document.getElementById("submit-btn");
+        if (!nextBtn || !submitBtn) {
+             console.error("loadQuestion: Boutons next/submit non trouvés.");
+             return;
+        }
+
+        if (currentQuestionIndex < currentModuleQuestions.length - 1) { // Pas la dernière question
+            nextBtn.style.display = "inline-block";
+            submitBtn.style.display = "none";
+        } else { // Dernière question du module
+            nextBtn.style.display = "none";
+            submitBtn.style.display = "inline-block";
+            submitBtn.className = nextBtn.className; // Copier les classes pour le style
+        }
+
 
     } else {
+        console.log("loadQuestion: Fin du module", currentModuleIndex); // LOG
         // Module terminé, passer au module suivant ou afficher les résultats si c'est le dernier module
         currentModuleIndex++;
         currentQuestionIndex = 0;
         if (currentModuleIndex < quizData[specialiteQuiz].length) {
+            console.log("loadQuestion: Passage au module suivant:", currentModuleIndex); // LOG
             changeModule(currentModuleIndex); // Charger le module suivant
         } else {
+             console.log("loadQuestion: Tous les modules terminés. Redirection vers les résultats."); // LOG
             // Tous les modules sont terminés, afficher la page de résultats
-            quizFinished = true;
-            localStorage.setItem('cheated', cheating);
-            const finalScore = (score / getTotalQuestions()) * 100; // Calculer le score total
-            localStorage.setItem('score', finalScore);
-            localStorage.setItem('userName', localStorage.getItem('userName')); // Récupérer userName du localStorage et le ré-enregistrer
-            localStorage.setItem('specialite', localStorage.getItem('specialite')); // Récupérer specialite du localStorage et le ré-enregistrer
-
-            // {{ Assistant ajoute ces lignes de console.log pour le débogage }}
-            console.log("userName enregistré dans localStorage:", localStorage.getItem('userName'));
-            console.log("specialite enregistrée dans localStorage:", localStorage.getItem('specialite'));
-            console.log("score enregistré dans localStorage:", localStorage.getItem('score'));
-            console.log("cheated enregistré dans localStorage:", localStorage.getItem('cheated'));
-            console.log("Redirection vers resultats.html");
-
-            window.location.href = 'resultats.html';
+            handleQuizEndOrError(); // Utiliser une fonction séparée pour la fin
         }
     }
 }
@@ -1559,69 +1732,83 @@ function getTotalQuestions() {
     return totalQuestions;
 }
 
-function selectAnswer() {
-    const selectedOption = document.querySelector('input[name="qcm"]:checked');
-    if (selectedOption) {
-        const answerIndex = parseInt(selectedOption.value);
-        // Récupérer l'option sélectionnée (texte) après le mélange
-        const selectedAnswerText = document.querySelector(`#options-container label:nth-child(${answerIndex + 1})`).textContent.trim();
-        // Trouver l'index de la réponse sélectionnée dans le tableau d'options original
-        const originalAnswerIndex = getCurrentModuleQuestions()[currentQuestionIndex].options.indexOf(selectedAnswerText);
-
-        if (originalAnswerIndex === getCurrentModuleQuestions()[currentQuestionIndex].answer) {
-            score++;
-        }
+// Nouvelle fonction pour gérer la fin du quiz ou une erreur majeure
+function handleQuizEndOrError(errorMessage = null) {
+    quizFinished = true; // Marquer comme terminé
+    console.log("handleQuizEndOrError: Quiz terminé ou erreur majeure.", errorMessage || ""); // LOG
+    if (errorMessage) {
+        alert(errorMessage); // Afficher l'erreur à l'utilisateur si fournie
     }
+    try {
+        localStorage.setItem('cheated', cheating);
+        const totalQuestions = getTotalQuestions();
+        // Éviter la division par zéro si getTotalQuestions renvoie 0
+        const finalScore = totalQuestions > 0 ? (score / totalQuestions) * 100 : 0;
+        localStorage.setItem('score', finalScore);
+        // Assurer que userName et specialite sont bien dans localStorage avant redirection
+        const userName = localStorage.getItem('userName');
+        const specialite = localStorage.getItem('specialite');
+        if (userName) localStorage.setItem('userName', userName);
+        if (specialite) localStorage.setItem('specialite', specialite);
 
-    currentQuestionIndex++;
-    progress = ((currentQuestionIndex) / getCurrentModuleQuestions().length) * 100;
-    document.getElementById("progress-bar").style.width = progress + "%";
-
-    if (currentQuestionIndex < getCurrentModuleQuestions().length -1 ) { // Vérifie si ce n'est pas la dernière question du module
-        loadQuestion();
-        document.getElementById("next-btn").style.display = "inline-block";
-        document.getElementById("submit-btn").style.display = "none";
-    } else if (currentQuestionIndex === getCurrentModuleQuestions().length -1 ) { // Si c'est la dernière question du module
-        loadQuestion();
-        document.getElementById("next-btn").style.display = "none";
-        document.getElementById("submit-btn").style.display = "inline-block";
-        document.getElementById("submit-btn").className = document.getElementById("next-btn").className;
-    }
-     else {
-        loadQuestion(); // Charge la première question du module suivant ou affiche les résultats
-        document.getElementById("next-btn").style.display = "inline-block";
-        document.getElementById("submit-btn").style.display = "none";
+        console.log("handleQuizEndOrError: Données enregistrées:", { userName, specialite, score: finalScore, cheating }); // LOG
+        console.log("handleQuizEndOrError: Redirection vers resultats.html"); // LOG
+        window.location.href = 'resultats.html';
+    } catch (e) {
+        console.error("Erreur lors de l'enregistrement des résultats ou de la redirection:", e); // LOG ERREUR
+        // Afficher un message d'erreur à l'utilisateur ?
+        alert("Une erreur est survenue lors de la finalisation du quiz. Vos résultats pourraient ne pas être sauvegardés.");
     }
 }
 
-document.getElementById("next-btn").addEventListener("click", selectAnswer);
-document.getElementById("submit-btn").addEventListener("click", function() {
-    selectAnswer();
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Récupérer le nom de l'utilisateur depuis localStorage
-    const userName = localStorage.getItem('userName');
+function selectAnswer() {
+    console.log("selectAnswer: Sélection d'une réponse."); // LOG
+    const selectedOptionInput = document.querySelector('input[name="qcm"]:checked');
+    if (selectedOptionInput) {
+        const selectedOriginalIndex = parseInt(selectedOptionInput.value); // La valeur est maintenant l'index original
+        console.log("selectAnswer: Index original sélectionné:", selectedOriginalIndex); // LOG
 
-    // Si le nom de l'utilisateur existe, l'afficher dans la colonne latérale
-    if (userName) {
-        const userNameElement = document.getElementById('user-name');
-        if (userNameElement) {
-            userNameElement.textContent = userName;
+        // Vérifier si la question actuelle existe
+         if (!getCurrentModuleQuestions()[currentQuestionIndex]) {
+             console.error("selectAnswer: Impossible de trouver la question actuelle pour vérifier la réponse.");
+             handleQuizEndOrError("Erreur lors de la vérification de la réponse.");
+             return;
+         }
+
+        if (selectedOriginalIndex === getCurrentModuleQuestions()[currentQuestionIndex].answer) {
+            score++;
+            console.log("selectAnswer: Bonne réponse. Score actuel:", score); // LOG
+        } else {
+             console.log("selectAnswer: Mauvaise réponse."); // LOG
         }
+    } else {
+         console.log("selectAnswer: Aucune réponse sélectionnée."); // LOG
+         // Optionnel: Empêcher de continuer sans réponse ?
+         // alert("Veuillez sélectionner une réponse.");
+         // return;
     }
-});
 
-// Gestionnaire d'événement pour le bouton "Commencer le Quiz" dans le pop-up
-document.getElementById('start-quiz-btn').addEventListener('click', function() {
-    document.getElementById('instructions-popup').style.display = 'none'; // Cacher le pop-up
-    sessionStorage.setItem('instructionsShown', 'true'); // Marquer les instructions comme vues
-    loadQuestion(); // Charger la première question
-});
+    currentQuestionIndex++;
+     // Vérifier si la barre de progression existe
+    const progressBar = document.getElementById("progress-bar");
+    if (progressBar) {
+        const currentModuleLength = getCurrentModuleQuestions().length;
+        // Éviter la division par zéro
+        progress = currentModuleLength > 0 ? ((currentQuestionIndex) / currentModuleLength) * 100 : 0;
+        progressBar.style.width = progress + "%";
+        console.log("selectAnswer: Progression mise à jour:", progress); // LOG
+    } else {
+        console.warn("selectAnswer: Élément progress-bar non trouvé."); // LOG AVERTISSEMENT
+    }
 
-// Gestionnaire d'événement pour le bouton de fermeture du pop-up
-document.getElementById('close-popup').addEventListener('click', function() {
-    document.getElementById('instructions-popup').style.display = 'none'; // Cacher le pop-up
-    sessionStorage.setItem('instructionsShown', 'true'); // Marquer les instructions comme vues
-    loadQuestion(); // Charger la première question même si l'utilisateur ferme sans cliquer sur "Commencer"
-});
+
+    // Charger la question suivante ou terminer
+    loadQuestion(); // loadQuestion gère maintenant l'affichage des boutons et la fin du quiz/module
+}
+
+// La logique pour afficher le nom d'utilisateur est aussi conditionnée dans window.onload
+
+// Les gestionnaires pour start-quiz-btn et close-popup sont maintenant dans window.onload et conditionnés
+
+// Le gestionnaire pour le bouton Hamburger est maintenant dans window.onload et conditionné

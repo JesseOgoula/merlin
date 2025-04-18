@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajout de la balise viewport -->
   <title>QCM D'EVALUATION</title>
   <!-- Lien vers Bootstrap 5 (CDN) -->
   <link
@@ -71,23 +72,52 @@
   <!-- Votre script personnel -->
   <script src="app.js"></script>
   <script>
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('username').value;
-        localStorage.setItem('userName', username);
+    console.log("Script index.html démarré."); // LOG DE DÉMARRAGE SCRIPT
+    const loginForm = document.getElementById('login-form');
+    console.log("Élément #login-form trouvé:", loginForm); // LOG ÉLÉMENT FORM
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            console.log("Événement submit déclenché."); // LOG DÉCLENCHEMENT
+            const username = document.getElementById('username').value;
         const specialite = document.getElementById('specialite').value;
-        localStorage.setItem('specialite', specialite);
+        console.log("Username:", username, "Spécialité:", specialite); // LOG
+
+        try {
+            localStorage.setItem('userName', username);
+            console.log("userName sauvegardé dans localStorage."); // LOG
+        } catch (e) {
+            console.error("Erreur lors de la sauvegarde de userName dans localStorage:", e); // LOG ERREUR
+            alert("Erreur lors de la sauvegarde du nom d'utilisateur. Le quiz pourrait ne pas fonctionner correctement.");
+            // On pourrait choisir de ne pas continuer ici, mais on essaie quand même
+        }
+
+        try {
+            localStorage.setItem('specialite', specialite);
+             console.log("specialite sauvegardée dans localStorage."); // LOG
+        } catch (e) {
+            console.error("Erreur lors de la sauvegarde de specialite dans localStorage:", e); // LOG ERREUR
+            alert("Erreur critique lors de la sauvegarde de la spécialité. Impossible de continuer.");
+            return; // Arrêter si on ne peut pas sauvegarder la spécialité
+        }
+
         let quizPage;
         if (specialite === 'gestion de projet') {
-            quizPage = 'quiz-gestion-projet.html';
+            quizPage = './quiz-gestion-projet.html'; // Ajout de ./
         } else if (specialite === 'marketing digital') {
-            quizPage = 'quiz-marketing-digital.html';
+            quizPage = './quiz-marketing-digital.html'; // Ajout de ./
         } else {
             alert('Spécialité non reconnue.');
             return;
         }
-        window.location.href = quizPage;
-    });
+        console.log("Redirection vers:", quizPage); // LOG
+        // Utilisation de setTimeout pour retarder légèrement la redirection
+        setTimeout(() => {
+            window.location.href = quizPage;
+        }, 0);
+    }); // Fin de addEventListener
+    } // <--- Ajout de l'accolade fermante pour le bloc if (loginForm)
   </script>
 </body>
 </html>

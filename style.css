@@ -42,7 +42,7 @@ html, body {
   text-align: center;
   font-size: 1.1em;
   background-color: #fff8e6;
-  margin-left: 112px;
+  /* margin-left: 112px; */ /* Supprimé pour un meilleur centrage responsive */
   padding: 8px 15px;
   border-radius: 8px;
   color: #85640a;
