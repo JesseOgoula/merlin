@@ -1379,6 +1379,25 @@ window.onload = () => {
 
     if (quizContainer) {
         console.log("window.onload: Page de quiz détectée."); // LOG
+
+        // Récupérer et afficher le nom d'utilisateur
+        let userName = null;
+        try {
+            userName = localStorage.getItem('userName');
+            console.log("window.onload: Nom d'utilisateur récupéré:", userName); // LOG
+        } catch (e) {
+            console.error("Erreur lors de l'accès à localStorage pour userName:", e); // LOG ERREUR
+        }
+
+        const userNameElement = document.getElementById('user-name');
+        if (userNameElement) {
+            // Utiliser "UNKNOWN" si userName est null, undefined ou une chaîne vide
+            userNameElement.textContent = userName ? userName : "UNKNOWN";
+            console.log("window.onload: Nom affiché dans la sidebar:", userNameElement.textContent); // LOG
+        } else {
+            console.warn("window.onload: Élément #user-name non trouvé dans le DOM."); // LOG AVERTISSEMENT
+        }
+
         // Récupérer la spécialité depuis localStorage
         let storedSpecialite = null;
         try {
@@ -1541,10 +1560,20 @@ window.onload = () => {
 
 
 function initWebcam() {
-     // Vérifier si le conteneur webcam existe avant de continuer
     const webcamContainer = document.getElementById('webcam-container');
     if (!webcamContainer) return; // Sortir si pas sur une page de quiz
 
+    // Détecter si l'appareil est mobile/tablette (méthode simple basée sur userAgent)
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        console.log("Appareil mobile détecté, désactivation de la webcam."); // LOG
+        webcamContainer.style.display = 'none'; // Masquer le conteneur de la webcam
+        return; // Ne pas initialiser la webcam sur mobile/tablette
+    }
+
+    // Initialiser la webcam uniquement sur les appareils non mobiles
+    console.log("Initialisation de la webcam pour appareil non mobile."); // LOG
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(function (stream) {
             const video = document.getElementById('webcam-video');
@@ -1554,7 +1583,6 @@ function initWebcam() {
         })
         .catch(function (err) {
             console.error("Erreur lors de l'accès à la webcam: ", err);
-            const webcamContainer = document.getElementById('webcam-container');
             if (webcamContainer) {
                 webcamContainer.innerHTML = "Erreur d'accès à la webcam.";
                 webcamContainer.style.color = 'red';
@@ -1784,9 +1812,19 @@ function selectAnswer() {
         }
     } else {
          console.log("selectAnswer: Aucune réponse sélectionnée."); // LOG
-         // Optionnel: Empêcher de continuer sans réponse ?
-         // alert("Veuillez sélectionner une réponse.");
-         // return;
+         // Empêcher de continuer sans réponse
+         alert("Veuillez sélectionner une réponse avant de continuer.");
+         return; // Ne pas continuer si aucune réponse n'est sélectionnée
+    }
+
+    // Vérifier si c'est la dernière question du dernier module
+    const isLastModule = currentModuleIndex === quizData[specialiteQuiz].length - 1;
+    const isLastQuestionOfModule = currentQuestionIndex === getCurrentModuleQuestions().length - 1;
+
+    if (isLastModule && isLastQuestionOfModule) {
+        console.log("selectAnswer: Dernière question du quiz répondue. Fin du quiz."); // LOG
+        handleQuizEndOrError(); // Terminer le quiz directement
+        return; // Ne pas exécuter le reste de la fonction
     }
 
     currentQuestionIndex++;
